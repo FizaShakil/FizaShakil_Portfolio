@@ -1,0 +1,28 @@
+import React from 'react'
+import backGroundImage from '../assets/background_image_heroSection.jpg'
+
+const HeroSection = () => {
+  return (
+    <div>
+        <div>
+            <img src={backGroundImage} alt="heroSection_Image" 
+                 className='w-full h-[500px] object-cover' 
+                 />
+            <div className='absolute top-0 left-0 w-full h-[573px] bg-black opacity-80'></div>
+            <div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center'>
+                <div className='text-white mx-4 text-2xl md:text-4xl font-bold text-center'>
+                    Fiza Shakil:
+                    <span className='text-gray-300'> Full Stack Web Developer</span>
+                    </div>
+                <p className='text-white mt-6 italic text-center'>Deciphering the digital language, bridging the gap between ideas and reality</p> 
+                <div className='flex items-center gap-4 mt-14 text-sm md:text-base'>
+                    <button className='bg-[#517E4F] border-[2px] border-[#517E4F] duration-300 hover:bg-[#04090d] text-white md:px-4 px-2 py-2 rounded-md'>Download CV <i className='fa-solid fa-download'></i> </button>
+                    <button className='bg-[#04090d] border-[2px] border-[#517E4F] hover:bg-[#517E4F] duration-300 text-white md:px-4 px-2 py-2 rounded-md'>Get in Touch <i className='fa-solid fa-arrow-right'></i>  </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default HeroSection
