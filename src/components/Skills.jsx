@@ -16,7 +16,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="text-white pt-6 pb-16 px-4 rounded-2xl shadow-lg max-w-7xl mx-auto mt-10" 
+    <div className="text-white pt-24 pb-32 px-4 rounded-2xl shadow-lg max-w-7xl mx-auto mt-10" 
           id="skills">
       {/* Heading */}
       <Heading heading={"Skills"}/>
