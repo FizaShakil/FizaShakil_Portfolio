@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.html{
+html{
     scroll-behavior: smooth;
+}
+body {
+  height: 3000px; /* Used to enable scrolling */
+  background: linear-gradient(55deg, #04090d 0%, #060e14 51%, #04090d 85%);
+}
+html{
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
