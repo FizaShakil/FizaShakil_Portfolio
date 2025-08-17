@@ -16,7 +16,7 @@ const Services = () => {
             key={index}
             className="w-full max-w-xs md:h-[40vh] text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-4 py-3 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68]"
           >
-            <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
+            <h1 className="text-xl font-semibold mb-2 text-white">{service.title}</h1>
             <p className="text-gray-400 text-sm lg:text-base">{service.description}</p>
           </div>
         ))}
@@ -29,7 +29,7 @@ const Services = () => {
             key={index}
             className="w-full max-w-xs md:max-w-xl md:w-[475px] text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-6 py-3 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68]"
           >
-            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+            <h1 className="text-xl font-semibold mb-2">{service.title}</h1>
             <p className="text-gray-400 text-sm lg:text-base">{service.description}</p>
           </div>
         ))}

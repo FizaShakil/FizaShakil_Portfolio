@@ -12,10 +12,10 @@ const HeroSection = () => {
             />
             <div className='absolute top-0 left-0 w-full h-[573px] bg-black opacity-80'></div>
             <div className='absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center'>
-                <div className='text-white mx-4 text-2xl md:text-4xl font-bold text-center'>
+                <h1 className='text-white mx-4 text-2xl md:text-4xl font-bold text-center'>
                     Fiza Shakil:
                     <span className='text-gray-300'> Full Stack Web Developer</span>
-                </div>
+                </h1>
                 <p className='text-white mx-4 mt-6 italic text-center'>
                   Deciphering the digital language, bridging the gap between ideas and reality
                 </p> 

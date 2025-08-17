@@ -15,7 +15,7 @@ const Navbar = () => {
           >
             <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-lg md:hidden`}></i>
           </button>
-          <p className="text-2xl font-mono font-bold transform transition-all duration-300 hover:scale-105">
+          <p className="text-xl font-mono font-bold transform transition-all duration-300 hover:scale-105">
            {'<F/>'}
           </p>
         </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold font-serif">
+          <h2 className="text-xl font-mono font-bold">
             {'<F/>'}
           </h2>
           <button 
