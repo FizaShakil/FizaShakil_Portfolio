@@ -20,7 +20,7 @@ const HeroSection = () => {
                   Deciphering the digital language, bridging the gap between ideas and reality
                 </h2> 
                 <div className='flex items-center gap-4 mt-14 text-sm md:text-base'>
-                  <a href="https://drive.google.com/file/d/1DxEfjW93GdylQ3j2-NojBAWkv6CcWEow/view?usp=drive_link" target='_blank'>
+                  <a href="https://drive.google.com/file/d/1TmLmsPZZN3mGgIR-4WFxB1ax1i60TLRv/view?usp=sharing" target='_blank' rel='noopener'>
                     <button className='bg-[#517E4F] border-[2px] border-[#517E4F] duration-300 hover:bg-[#04090d] text-white md:px-4 px-2 py-2 rounded-md transform hover:scale-105 transition-all'>
                       View my Resume <i className='fa-solid fa-download'></i> 
                     </button>
