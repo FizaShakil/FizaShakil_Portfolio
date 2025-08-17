@@ -3,9 +3,9 @@ import React from 'react'
 const Heading = ({heading}) => {
   return (
     <div>
-        <div className='text-center text-gray-200 font-bold text-3xl mb-8 md:text-4xl'>
+        <h2 className='text-center text-gray-200 font-bold text-3xl mb-8 md:text-4xl'>
         {heading}
-        </div>
+        </h2>
     </div>
   )
 }
