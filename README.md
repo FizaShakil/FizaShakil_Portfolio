@@ -11,8 +11,8 @@ This is where I showcase my **skills, projects, and services**.
 Hi, I’m **Fiza Shakil**, a passionate **Full Stack web Developer** who loves building secure, fast responsive, user-friendly, and modern full stack web applications.    
 
 ## Connect With Me  
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/fiza-shakil)  
-- GitHub: [@yourgithub](https://github.com/FizaShakil)   
+- LinkedIn: [Fiza Shakil](https://linkedin.com/in/fiza-shakil)  
+- GitHub: [Fiza Shakil](https://github.com/FizaShakil)   
 
 ---
 
