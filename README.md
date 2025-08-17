@@ -1,12 +1,23 @@
-# React + Vite
+# Fiza Shakil – Portfolio Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my Personal portfolio!  
+This is where I showcase my **skills, projects, and services**.  
 
-Currently, two official plugins are available:
+**Live Portfolio:** [Visit My Website](https://your-portfolio-link.vercel.app/)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## About Me  
+Hi, I’m **Fiza Shakil**, a passionate **Full Stack web Developer** who loves building secure, fast responsive, user-friendly, and modern full stack web applications.    
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Connect With Me  
+- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/fiza-shakil)  
+- GitHub: [@yourgithub](https://github.com/FizaShakil)   
+
+---
+
+⭐ If you found my portfolio interesting, feel free to connect with me or check out my repositories.  
+
+
+### SEO Keywords  
+*Fiza Shakil, Portfolio, Full Stack Developer, MERN Stack Developer, React Developer, Web Developer, JavaScript Developer*  
