@@ -17,7 +17,4 @@ Hi, I’m **Fiza Shakil**, a passionate **Full Stack web Developer** who loves b
 ---
 
 ⭐ If you found my portfolio interesting, feel free to connect with me or check out my repositories.  
-
-
-### SEO Keywords  
-*Fiza Shakil, Portfolio, Full Stack Developer, MERN Stack Developer, React Developer, Web Developer, JavaScript Developer*  
+  
