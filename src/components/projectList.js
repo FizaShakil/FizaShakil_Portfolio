@@ -2,7 +2,7 @@ const projects = [
   {
     id: 1,
     title: "Modern E-Commerce Platform",
-    description: "Fashionista is a modern full-stack E-Commerce fully functional website, features both client and admin panel.The project emphasizes responsive UI, secure authentication, and real-time cart functionality, utilizing Redux for state management and RESTful APIs for backend operations. ",
+    description: "Fashionista is a modern full-stack E-Commerce fully functional website, features both client and admin panel.The project emphasizes responsive UI, secure authentication, and cart functionality, utilizing Redux for state management & RESTful APIs for backend operations. ",
     image: 'https://res.cloudinary.com/dzjyybld9/image/upload/v1754743588/fashionista_mockup2_lavlrz.png',
     githubLink: "#",
     demoLink: "https://fashionista-client.onrender.com/",
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 3,
     title: "Tropical destination Website",
-    description: "Glance is a professionally designed tropical destination responsive website that showcases breathtaking travel locations, allowing users to explore destinations, view detailed descriptions, and make bookings.",
+    description: "Glance is a professionally designed tropical destination responsive website that showcases breathtaking travel locations, allowing users to explore destinations, view detailed descriptions, and make bookings. Focuses on providing an immersive and responsive user experience with a monochromatic purple color scheme to reflect a premium aesthetic aligned with tropical getaways.",
     image: "https://res.cloudinary.com/dzjyybld9/image/upload/v1754743522/glance_Mockup_ycu7j7.png",
     githubLink: "https://github.com/FizaShakil/Glance.git",
     demoLink: "https://glance-one.vercel.app/",
@@ -56,7 +56,7 @@ const projects = [
   {
     id: 5,
     title: "Business Portfolio",
-    description: "A Project made with team members collaboration at the Web development Competetion by ACM-NUCES at FAST-NUCES, Karachi. It is a clean, modern, and professional single-page portfolio website designed for a corporate consultant focused on marketing strategy development, performance optimization, and brand positioning.",
+    description: "A clean and professional single-page portfolio website developed with team collaboration at the Web development Competetion by ACM-NUCES at FAST-NUCES, Karachi. It is developed for a corporate consultant focused on marketing strategy development, performance optimization, and brand positioning.",
     image: "https://res.cloudinary.com/dzjyybld9/image/upload/v1754803755/globex_mockup_afmhve.png",
     githubLink: "https://github.com/FizaShakil/DevDay25_Project.git",
     demoLink: "https://www.linkedin.com/posts/fiza-shakil_devday25-teamwork-webdevelopment-activity-7318982316972761089-I7fa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEITf3UBUBhyM3ABzp_Zav9FuqWXLJqiWaE",

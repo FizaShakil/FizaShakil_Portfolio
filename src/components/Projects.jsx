@@ -59,7 +59,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2 text-sm font-medium text-white rounded-md transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black transform hover:scale-105"
+                    className="px-5 py-2 text-sm font-medium text-white rounded-md transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black transform"
                     style={{ backgroundColor: '#517E4F' }}
                     onMouseEnter={(e) => {
                       e.target.style.backgroundColor = '#5d8a5a';
@@ -75,7 +75,7 @@ const Projects = () => {
                     href={project.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2 text-sm font-medium text-gray-400 border border-gray-600 rounded-md transition-all duration-300 hover:text-gray-300 hover:border-gray-400 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-gray-500 transform hover:scale-105"
+                    className="px-5 py-2 text-sm font-medium text-gray-400 border border-gray-600 rounded-md transition-all duration-300 hover:text-gray-300 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-gray-500 transform hover:scale-105"
                   >
                     Live Demo
                   </a>
