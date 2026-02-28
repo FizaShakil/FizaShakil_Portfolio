@@ -1,6 +1,6 @@
 import React from 'react';
 import Heading from './Reusable-Components/Heading';
-import projects from './projectList';
+import projects from '../lists/projectList';
 
 const Projects = () => {
   return (

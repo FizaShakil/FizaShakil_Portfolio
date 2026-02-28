@@ -1,6 +1,6 @@
 import React from 'react';
 import Heading from './Reusable-Components/Heading';
-import servicesData from './servicesList';
+import servicesData from '../lists/servicesList';
 
 const Services = () => {
   return (
