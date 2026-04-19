@@ -1,8 +1,11 @@
 import React from 'react';
 import Heading from './Reusable-Components/Heading';
 import testimonialsData from '../lists/testimonialsList';
+import { useStaggeredReveal } from '../hooks/useScrollReveal';
 
 const Testimonials = () => {
+  const [gridRef, gridVisible] = useStaggeredReveal(testimonialsData.length);
+
   // Function to render stars
   const renderStars = () => {
     return (
@@ -21,11 +24,11 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonials Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
         {testimonialsData.map((testimonial, index) => (
           <div
             key={index}
-            className="text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-6 py-6 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68] h-[350px] flex flex-col"
+            className={`text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-6 py-6 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68] h-[350px] flex flex-col btn-premium stagger-item stagger-delay-${Math.min(index + 1, 6)} ${gridVisible ? 'visible' : ''}`}
           >
             {/* Stars */}
             {renderStars()}
