@@ -3,7 +3,7 @@ import fashionistaImg from '../assets/fashionista_newImg.png';
 import rmsImg from '../assets/rms.png';
 import crystalImg from '../assets/crystal_mockup.png';
 import apiImg from '../assets/api-01_generated.jpg'
-import glanceImg from '../assets/glance_mockup.png'
+import glanceImg from '../assets/glance_Mockup.png'
 
 const projects = [
   {

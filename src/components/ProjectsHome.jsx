@@ -1,11 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import projects from '../lists/projectList';
-import { useScrollReveal, useStaggeredReveal } from '../hooks/useScrollReveal';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const ProjectsHome = () => {
   const [headerRef, headerVisible] = useScrollReveal();
-  const [gridRef, gridVisible] = useStaggeredReveal(3);
   
   // Get first 3 projects
   const featuredProjects = projects.slice(0, 3);
@@ -37,17 +35,30 @@ const ProjectsHome = () => {
           {featuredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-[#1a1a1a] rounded-2xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl"
+              className="bg-[#1a1a1a] rounded-2xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl group"
             >
-              {/* Project Image */}
-              <div className="relative h-48 lg:h-56 overflow-hidden">
+              {/* Project Image - Clickable */}
+              <Link to={`/case-study/${project.id}`} className="block relative h-48 lg:h-56 overflow-hidden">
                 <img
                   src={project.localImage || project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
+                
+                {/* Transparent Overlay on hover */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center">
+                  <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="text-white text-lg font-semibold mb-2">
+                      View Case Study
+                    </div>
+                    <div className="text-gray-300 text-sm">
+                      Detailed technical breakdown
+                    </div>
+                    <div className="mt-4 w-12 h-0.5 bg-[#507e4f] mx-auto"></div>
+                  </div>
+                </div>
+              </Link>
 
               {/* Project Info */}
               <div className="p-6">
@@ -66,10 +77,12 @@ const ProjectsHome = () => {
                   </div>
                 )}
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 leading-tight">
-                  {project.title}
-                </h3>
+                {/* Title - Clickable */}
+                <Link to={`/case-study/${project.id}`}>
+                  <h3 className="text-xl font-bold text-white mb-3 leading-tight hover:text-[#507e4f] transition-colors duration-300 cursor-pointer">
+                    {project.title}
+                  </h3>
+                </Link>
 
                 {/* Description */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-6">
