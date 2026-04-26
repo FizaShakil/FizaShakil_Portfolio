@@ -11,25 +11,61 @@ import {
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  // SiNextdotjs,
+  SiNextdotjs,
   SiExpress,
   SiMongodb,
   SiMysql,
+  SiSupabase,
+  SiPostgresql,
+  SiTypescript,
 } from "react-icons/si";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 /> },
   { name: "CSS3", icon: <FaCss3Alt /> },
   { name: "JavaScript", icon: <FaJs /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
   { name: "React.js", icon: <FaReact /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   { name: "Node.js", icon: <FaNodeJs /> },
-  // { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "Express JS", icon: <SiExpress /> },
   { name: "MongoDB", icon: <SiMongodb /> },
   { name: "MySQL", icon: <SiMysql /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "Supabase", icon: <SiSupabase /> },
   { name: "Java", icon: <FaJava /> },
 ];
+
+// Split into two rows for desktop timeline
+const row1 = skills.slice(0, 7);
+const row2 = skills.slice(7);
+
+const SkillNode = ({ skill, isOdd }) => (
+  <div className="relative flex flex-col items-center z-10 flex-1 cursor-pointer min-w-0">
+    {isOdd ? (
+      <>
+        <span className="mb-2 text-xs font-semibold text-center whitespace-nowrap">{skill.name}</span>
+        <div className="w-0.5 h-6 bg-[#497c47]" />
+      </>
+    ) : (
+      <div className="h-[52px]" />
+    )}
+
+    <div className="bg-[#497c47] text-white px-[10px] py-1 rounded-xl border-[0.1px] border-white text-xl shadow-md z-10 transform transition-all duration-300 hover:shadow-2xl hover:bg-[#5a8a58]">
+      {skill.icon}
+    </div>
+
+    {!isOdd ? (
+      <>
+        <div className="w-0.5 h-6 bg-[#497c47]" />
+        <span className="mt-2 text-xs font-semibold text-center whitespace-nowrap">{skill.name}</span>
+      </>
+    ) : (
+      <div className="h-[52px]" />
+    )}
+  </div>
+);
 
 const Skills = () => {
   return (
@@ -37,7 +73,6 @@ const Skills = () => {
       className="text-white pt-24 pb-32 px-4 rounded-2xl shadow-lg max-w-7xl mx-auto mt-10"
       id="skills"
     >
-      {/* Heading */}
       <div>
         <Heading heading={"Skills"} />
       </div>
@@ -45,51 +80,26 @@ const Skills = () => {
         Leveraging a diverse tech stack to build modern, scalable, and responsive web applications.
       </p>
 
-      {/* Desktop Timeline Layout */}
-      <div className="hidden md:flex relative justify-between items-center px-4">
-        {/* Horizontal line behind icons */}
-        <div className="absolute top-1/2 left-0 w-[88%] h-0.5 bg-[#497c47] z-0 mx-20" />
+      {/* Desktop Timeline Layout - Two Rows */}
+      <div className="hidden md:flex flex-col gap-6">
+        {/* Row 1 */}
+        <div className="relative flex justify-between items-center px-4">
+          <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-[#497c47] z-0" />
+          {row1.map((skill, index) => (
+            <SkillNode key={index} skill={skill} isOdd={index % 2 === 0} />
+          ))}
+        </div>
 
-        {skills.map((skill, index) => {
-          const isOdd = index % 2 === 0;
-
-          return (
-            <div
-              key={index}
-              className="relative flex flex-col items-center z-10 w-[80%] cursor-pointer"
-            >
-              {isOdd ? (
-                <>
-                  {/* Top label */}
-                  <span className="mb-2 text-sm font-semibold text-center">{skill.name}</span>
-                  {/* Top vertical line */}
-                  <div className="w-0.5 h-7 bg-[#497c47]" />
-                </>
-              ) : (
-                <div className="h-8" /> // Spacer for alignment
-              )}
-
-              {/* Icon box */}
-              <div className="bg-[#497c47] text-white px-[10px] py-1 rounded-xl border-[0.1px] border-white text-xl shadow-md z-10 transform transition-all duration-300 hover:shadow-2xl hover:bg-[#5a8a58]">
-                {skill.icon}
-              </div>
-
-              {!isOdd ? (
-                <>
-                  {/* Bottom vertical line */}
-                  <div className="w-0.5 h-7 bg-[#497c47]" />
-                  {/* Bottom label */}
-                  <span className="mt-2 text-sm font-semibold text-center">{skill.name}</span>
-                </>
-              ) : (
-                <div className="h-8" /> // Spacer for alignment
-              )}
-            </div>
-          );
-        })}
+        {/* Row 2 */}
+        <div className="relative flex justify-between items-center px-4">
+          <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-[#497c47] z-0" />
+          {row2.map((skill, index) => (
+            <SkillNode key={index} skill={skill} isOdd={index % 2 === 0} />
+          ))}
+        </div>
       </div>
 
-      {/* Mobile/Table View */}
+      {/* Mobile/Tablet View */}
       <div className="md:hidden grid grid-cols-3 sm:grid-cols-4 gap-6 justify-items-center mt-6">
         {skills.map((skill, index) => (
           <div key={index} className="flex flex-col items-center cursor-pointer">

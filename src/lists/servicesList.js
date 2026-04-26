@@ -1,24 +1,23 @@
 const servicesData = [
   {
-    title: "E-Commerce Full stack development",
-    description: "From dynamic product catalogs to secure payment gateways and intuitive admin panels, I build complete e-commerce solutions that drive sales and enhance user experience.",
+    title: "SaaS MVP Development",
+    description: "I help turn your idea into a working product you can launch. From core features to a clean user experience, I focus on building MVPs that are simple, usable, and ready for real users."
   },
   {
-    title: "Frontend Development",
-    description: "I create engaging, responsive, and high-performance user interfaces using modern frameworks like React.js, ensuring a seamless experience across all devices.",
+    title: "Full-Stack Web Applications",
+    description: "I build complete web applications where everything works together smoothly—from user interface to backend logic—so your product is reliable, fast, and easy to manage."
   },
   {
-    title: "API Development (Node JS and Express JS",
-    description: "I develop robust, scalable, and secure APIs with Node.js, Express.js, and MongoDB to power your web and mobile applications.",
+    title: "Custom Business Systems",
+    description: "I create tailored systems like dashboards, management tools, or internal platforms that simplify operations and help businesses run more efficiently."
   },
   {
-    title: "Management System",
-    description: " I Develop tailored management systems for various niches including restaurants, e-commerce, and small businesses, optimizing operations and increasing efficiency.",
+    title: "Backend & API Development",
+    description: "I design and develop structured backend systems and APIs that handle data securely and keep your application running smoothly behind the scenes."
   },
   {
-    title: "Full-Stack Website Development",
-    description: "Delivering end-to-end web solutions, from database design and backend logic to captivating frontend interfaces, ensuring a cohesive and functional product.",
-  },
+    title: "UI-Focused Frontend Development",
+    description: "I build clean, responsive interfaces that are easy to use and designed with your users in mind—so your product not only works well but feels intuitive."
+  }
 ];
-
 export default servicesData
