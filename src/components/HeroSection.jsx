@@ -55,7 +55,7 @@ const HeroSection = () => {
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}>
-            <a href="https://drive.google.com/file/d/1qZpH4NrmwIfEgAe12mG1lqooG2icnKJ2/view?usp=sharing" target='_blank' rel='noopener'>
+            <a href="https://drive.google.com/file/d/1FuAZ_NBMEmr7aWv0sxDyKIx7vOn6eBml/view?usp=sharing" target='_blank' rel='noopener'>
               <button className='bg-[#517E4F] border-[2px] border-[#517E4F] duration-300 hover:bg-[#04090d] text-white md:px-4 px-2 py-2 rounded-md transform hover:scale-105 transition-all hover:shadow-lg hover:shadow-[#517E4F]/30 btn-premium'>
                 View my Resume <i className='fa-solid fa-download'></i> 
               </button>
