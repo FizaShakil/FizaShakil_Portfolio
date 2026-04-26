@@ -37,7 +37,7 @@ const HeroSection = () => {
               : 'opacity-0 translate-y-8'
           }`}>
             Fiza Shakil:
-            <span className='text-gray-300'> Full Stack Web Developer</span>
+            <span className='text-gray-300'> Full Stack Developer for SaaS MVPs</span>
           </h1>
 
           {/* Subtitle with Delayed Fade Up */}
