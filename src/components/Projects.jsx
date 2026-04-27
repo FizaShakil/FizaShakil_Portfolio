@@ -70,8 +70,8 @@ const Projects = () => {
     const positioning = {
       1: "High-impact MERN stack e-commerce solution engineered for enterprise-grade scalability and maximum ROI. Features comprehensive admin panel and secure payment integration.",
       2: "Full-stack restaurant management system with role-based access control, real-time order processing, and automated PDF invoice generation for streamlined operations.",
-      3: "Professionally designed tropical destination website showcasing immersive travel experiences with responsive design and premium aesthetic aligned with luxury getaways.",
-      4: "AI-powered mail handling service with smart home integration, featuring cloud technologies and automated workflow management for enhanced productivity.",
+      3: "AI-powered mail digitization interface with smart home commerce integration, featuring cloud inbox simulation, document classification flows, and IoT-driven product experiences.",
+      4: "Professionally designed travel experience platform showcasing immersive destinations with responsive design, smooth navigation, and premium visual storytelling.",
       5: "Clean and professional corporate portfolio developed through team collaboration, focused on marketing strategy development and brand positioning optimization.",
       6: "Sleek, responsive frontend clone demonstrating advanced UI/UX skills and modern web development practices with collaborative team development approach.",
       7: "Responsive restaurant landing page showcasing modern design principles, optimized performance, and comprehensive business information presentation.",
