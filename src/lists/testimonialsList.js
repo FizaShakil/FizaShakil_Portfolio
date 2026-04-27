@@ -7,7 +7,7 @@ const testimonialsData = [
     {
     name: "Marcus Thorne",
     role: "UK based SaaS Founder",
-    feedback: "This girl is an absolute powerhouse. We had a complex API integration that other developers couldn't quite crack, but she handled it with ease. Her ability to navigate both the front-end aesthetics and the heavy back-end logic is rare. Truly a top-tier professional."
+    feedback: "Thankyou for full stack services fiza. We have also hired a developer before, but unfortunately we got disappointed. But your expertise make us believe that still the professionals exists. Will love to work with you again."
     
 },
       {
