@@ -7,7 +7,7 @@ const testimonialsData = [
     {
     name: "Marcus Thorne",
     role: "UK based SaaS Founder",
-    feedback: "Thankyou for full stack services fiza. We have also hired a developer before, but unfortunately we got disappointed. But your expertise make us believe that still the professionals exists. Will love to work with you again."
+    feedback: "To be honest, we were hesitant to hire again after a really disappointing experience with a previous developer. But working with you changed everything, fiza. Your expertise and professionalism reminded us that there are still true experts out there who actually deliver on their promises. Our SaaS product is exactly where it needs to be. Will surely choose only you for the next project."
     
 },
       {
