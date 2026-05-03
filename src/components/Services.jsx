@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from './SEO';
 import Heading from './Reusable-Components/Heading';
 import servicesData from '../lists/servicesList';
 import { useStaggeredReveal } from '../hooks/useScrollReveal';
@@ -8,7 +9,14 @@ const Services = () => {
   const [bottomRowRef, bottomRowVisible] = useStaggeredReveal(2);
 
   return (
-    <div className="w-full px-4 md:px-20 pt-16 pb-16 text-center bg-[#040a0e] bg-opacity-[90%] text-white" id='services'>
+    <>
+      <SEO 
+        title="Services | Fiza Shakil - Full Stack Development Services"
+        description="Professional full-stack development services including React.js applications, Node.js backends, database design, and SaaS solutions. Custom web development for businesses."
+        canonical="https://fiza-shakil.dev/services"
+        keywords="full stack development services, React development, Node.js development, web application development, SaaS development, custom software development"
+      />
+      <div className="w-full px-4 md:px-20 pt-16 pb-16 text-center bg-[#040a0e] bg-opacity-[90%] text-white" id='services'>
       <div>
         <Heading heading={"Services"}/>
       </div>
@@ -39,6 +47,7 @@ const Services = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

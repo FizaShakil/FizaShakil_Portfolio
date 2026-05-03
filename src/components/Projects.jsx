@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from './SEO';
 import projects from '../lists/projectList';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -89,7 +90,14 @@ const Projects = () => {
   }));
 
   return (
-    <section className="bg-black text-white pt-10 pb-28 px-4 sm:px-6 lg:px-8">
+    <>
+      <SEO 
+        title="Projects | Fiza Shakil - Full Stack Developer Portfolio"
+        description="Explore my portfolio of full-stack web applications built with React.js, Node.js, MySQL, and MongoDB. Featuring e-commerce platforms, restaurant management systems, and SaaS solutions."
+        canonical="https://fiza-shakil.dev/projects"
+        keywords="Fiza Shakil projects, React projects, Node.js applications, MERN stack portfolio, full stack projects, web development portfolio"
+      />
+      <section className="bg-black text-white pt-10 pb-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div ref={headerRef} className={`text-center mb-16 md:mb-20 reveal-fade-up ${headerVisible ? 'visible' : ''}`}>
@@ -118,6 +126,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
@@ -138,7 +147,7 @@ const ProjectCard = ({ project, isReversed }) => {
                         group-hover:shadow-2xl group-hover:shadow-[#507e4f]/20">
           <img
             src={project.localImage || project.image}
-            alt={project.title}
+            alt={`${project.title} - Full Stack Web Application Project Screenshot`}
             className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover rounded-xl 
                        transform transition-transform duration-700 group-hover:scale-105"
           />

@@ -10,7 +10,7 @@ const About = () => {
       </div>
       <div className='flex flex-col md:flex-row items-center justify-center gap-4'>
         <div className='w-[250px] md:w-[300px]'>
-          <img src={myImage} alt="about" className='w-full h-full object-cover rounded-xl shadow-2xl' />
+          <img src={myImage} alt="Fiza Shakil - Professional headshot of Full Stack Developer" className='w-full h-full object-cover rounded-xl shadow-2xl' />
         </div>
         <div className='w-[80%] md:w-[45%]'>
           <div className='text-gray-200 mt-7 text-xs md:text-sm md:ml-9 leading-relaxed'>

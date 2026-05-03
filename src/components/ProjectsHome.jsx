@@ -41,7 +41,7 @@ const ProjectsHome = () => {
               <Link to={`/case-study/${project.id}`} className="block relative h-48 lg:h-56 overflow-hidden">
                 <img
                   src={project.localImage || project.image}
-                  alt={project.title}
+                  alt={`${project.title} - Full Stack Web Application Screenshot`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

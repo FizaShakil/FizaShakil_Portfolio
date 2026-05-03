@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="relative">
           <img 
             src={backGroundImage} 
-            alt="heroSection_Image" 
+            alt="Fiza Shakil - Full Stack Developer workspace with modern technology setup" 
             className={`w-full h-[500px] object-cover transition-all duration-1000 ease-out ${
               isLoaded ? 'scale-100 opacity-100' : 'scale-105 opacity-0'
             }`}
