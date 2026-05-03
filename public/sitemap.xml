@@ -8,13 +8,43 @@
   </url>
 
   <url>
-    <loc>https://fiza-shakil.dev/projects</loc>
+    <loc>https://fiza-shakil.dev/case-study/1</loc>
     <lastmod>2026-05-03</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://fiza-shakil.dev/#contact</loc>
+    <loc>https://fiza-shakil.dev/case-study/2</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fiza-shakil.dev/case-study/3</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fiza-shakil.dev/case-study/4</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fiza-shakil.dev/case-study/5</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fiza-shakil.dev/case-study/6</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fiza-shakil.dev/about</loc>
     <lastmod>2026-05-03</lastmod>
     <priority>0.5</priority>
   </url>
