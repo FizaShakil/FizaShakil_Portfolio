@@ -28,7 +28,7 @@ const Testimonials = () => {
         {testimonialsData.map((testimonial, index) => (
           <div
             key={index}
-            className={`text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-6 py-6 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68] h-[350px] flex flex-col btn-premium stagger-item stagger-delay-${Math.min(index + 1, 6)} ${gridVisible ? 'visible' : ''}`}
+            className={`text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-6 py-6 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68] flex flex-col btn-premium stagger-item stagger-delay-${Math.min(index + 1, 6)} ${gridVisible ? 'visible' : ''}`}
           >
             {/* Stars */}
             {renderStars()}
