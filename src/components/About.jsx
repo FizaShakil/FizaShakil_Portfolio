@@ -1,4 +1,3 @@
-import React from 'react'
 import Heading from './Reusable-Components/Heading'
 import myImage from '../assets/myImage.jpg'
 
@@ -13,11 +12,16 @@ const About = () => {
           <img src={myImage} alt="Fiza Shakil - Professional headshot of Full Stack Developer" className='w-full h-full object-cover rounded-xl shadow-2xl' />
         </div>
         <div className='w-[80%] md:w-[45%]'>
-          <div className='text-gray-200 mt-7 text-xs md:text-sm md:ml-9 leading-relaxed'>
-         I help SaaS founders and early-stage businesses turn ideas into clean, reliable digital products that people can actually use. With 1+ year of hands-on experience, I focus on building websites and MVPs that are fast, easy to navigate, and designed to grow with your business, without unnecessary complexity.<br/> <br/>
-         From shaping the first version of your product to refining user experience and performance, I work with a problem-solving mindset. The goal isn’t just to “build a website,” but to create something that supports your business, communicates your value clearly, and works smoothly for your users from day one.<br/><br/>
-         If you’re looking to launch an MVP, validate an idea, or improve an existing product, I focus on delivering solutions that are practical, scalable, and aligned with your goals.
-          </div>
+          <p className='text-gray-200 mt-7 text-xs md:text-sm md:ml-9 leading-relaxed'>
+            {/* I'm a Full Stack Developer with 1+ year of hands-on experience helping SaaS founders and early-stage businesses turn ideas into clean, reliable digital products. I build fast, scalable websites and MVPs using the MERN stack, with a focus on clear user experience, solid architecture, and solutions that grow with your business from day one. */}
+          </p>
+          <p className='text-gray-200 mt-7 text-xs md:text-sm md:ml-9 leading-relaxed'>
+            I help SaaS founders and early-stage businesses turn ideas into scalable digital products through modern web development and MVP-focused solutions.
+<br /><br />
+           As a Full Stack Developer, I focus on building fast, reliable, and user-friendly web applications that not only look clean but also support real business goals. From landing pages to full MVPs, I aim to create products that are easy to use, easy to maintain, and ready to grow as the business evolves.
+<br /><br />
+          My approach goes beyond writing code — I focus on understanding the problem, improving user experience, and building solutions that deliver practical value from the start. Whether it’s validating a new idea, refining an existing platform, or improving performance and usability, I work with a product-oriented mindset to help founders move faster with clarity and confidence.
+          </p>
         </div>
       </div>
     </div>
