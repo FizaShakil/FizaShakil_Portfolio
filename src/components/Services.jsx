@@ -14,7 +14,7 @@ const Services = ({ showSEO = true }) => {
         <SEO 
           title="Services | Fiza Shakil - Full Stack Development Services"
           description="Professional full-stack development services including React.js applications, Node.js backends, database design, and SaaS solutions. Custom web development for businesses."
-          canonical="https://fiza-shakil.dev#services"
+          canonical="https://fiza-shakil.dev/#services"
           keywords="full stack development services, React development, Node.js development, web application development, SaaS development, custom software development"
         />
       )}
