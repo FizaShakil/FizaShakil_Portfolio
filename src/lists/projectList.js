@@ -8,8 +8,8 @@ import glanceImg from '../assets/glance_Mockup.png'
 const projects = [
   {
     id: 1,
-    title: "Fashionista - Scalable E-Commerce Platform",
-   description: "A production-ready full-stack e-commerce platform built with the MERN stack, featuring secure authentication, dynamic product management, cart and checkout workflows, and a dedicated admin dashboard. Designed with scalable architecture, Redux-powered state management, RESTful API integration, and performance-focused UI to simulate real-world online commerce systems.",
+    title: "Fashionista - Complete Online Store System",
+   description: "A fully-functional online store where customers can browse products, add items to their cart, and complete secure purchases. The store owner can manage inventory, track orders, see sales analytics, and have full control from an admin dashboard. This system works smoothly 24/7 and can handle growing sales without slowdowns.",
     localImage: fashionistaImg,
     githubLink: "#",
     demoLink: "https://fashionista-client.onrender.com/",
@@ -23,8 +23,8 @@ const projects = [
   },
   {
     id: 2,
-    title: "RMS Pro – Restaurant Operations & Order Management Platform",
-    description: "A full-stack restaurant operations platform engineered to digitize order processing, billing, and product management through role-based access control. Includes secure authentication, structured database design, invoice generation with PDF exports, and workflow automation to streamline restaurant efficiency and operational visibility.",
+    title: "RMS Pro – Restaurant Management System",
+    description: "A complete system for restaurants to manage orders, payments, and staff roles. When a customer orders, it automatically goes to the kitchen. Staff can track orders in real-time. The system generates invoices automatically and managers can see reports on sales, busy times, and what's selling. No more manual order books or billing mistakes.",
     image: "https://res.cloudinary.com/dzjyybld9/image/upload/v1754745755/rms_mockup_2_nntwdf.png",
     localImage: rmsImg,
     githubLink: "https://github.com/FizaShakil/Restaurant-Management-System.git",
@@ -39,8 +39,8 @@ const projects = [
   },
   {
     id: 3,
-    title: "Crystal – AI-Powered Mail Digitization & Smart Commerce Interface",
-    description: "A modern frontend interface prototype designed for an AI-powered mail digitization and smart home commerce system. Focused on clean UI architecture, responsive layouts, and intuitive user flows, simulating document classification, cloud inbox integration, and IoT-driven product experiences.",
+    title: "Crystal – Digital Mail & Document Management",
+    description: "An organized system for managing physical mail digitally. Documents are scanned and automatically sorted by type. You get a clean inbox where you can find anything instantly, from bills to contracts. No more lost papers or messy filing cabinets. Access your important documents from anywhere, anytime.",
     image: "https://res.cloudinary.com/dzjyybld9/image/upload/v1754743572/crystal_mockup_rnq4qn.png",
     localImage: crystalImg,
     githubLink: "https://github.com/FizaShakil/Crystal.git",
@@ -52,8 +52,8 @@ const projects = [
   },
   {
     id: 4,
-    title: "Glance – Immersive Travel Experience Web Platform",
-    description: "A responsive travel experience platform designed to showcase premium destinations through immersive layouts and optimized UI performance. Built with a design-first approach, emphasizing user engagement, smooth navigation, and visual storytelling aligned with modern tourism brands.",
+    title: "Glance – Beautiful Travel Booking Platform",
+    description: "A visually stunning travel website that makes customers excited to book trips. The platform showcases destinations beautifully, loads fast on phones and computers, and makes booking smooth and intuitive. Designed to increase bookings by making the experience enjoyable and easy.",
     localImage: glanceImg,
     demoLink: "https://glance-one.vercel.app/",
     techStack: [
@@ -75,8 +75,8 @@ const projects = [
   // },
   {
     id: 5,
-    title: "DevConnect – Multi-Role Developer Marketplace Backend System ",
-    description: "A scalable backend architecture built with Node.js, Express, and MongoDB, enabling multi-role authentication, project lifecycle management, and a competitive bidding engine. Designed with secure REST APIs, modular routing, protected middleware layers, and structured database relationships to simulate a real-world freelance marketplace platform.",
+    title: "DevConnect – Freelance Developer Marketplace",
+    description: "A complete marketplace where businesses post projects and developers bid to take them on. The system manages project postings, tracks bids, handles agreements, and keeps everything organized. Businesses find talented developers quickly and transparently, developers get access to projects that match their skills. Everything happens in one secure platform.",
     githubLink: "https://github.com/FizaShakil/DevConnect-lite.git",
     demoLink: "#",
     localImage: apiImg,

@@ -16,11 +16,11 @@ const About = () => {
             {/* I'm a Full Stack Developer with 1+ year of hands-on experience helping SaaS founders and early-stage businesses turn ideas into clean, reliable digital products. I build fast, scalable websites and MVPs using the MERN stack, with a focus on clear user experience, solid architecture, and solutions that grow with your business from day one. */}
           </p>
           <p className='text-gray-200 mt-7 text-xs md:text-sm md:ml-9 leading-relaxed'>
-            I help SaaS founders and early-stage businesses turn ideas into scalable digital products through modern web development and MVP-focused solutions.
+            I help SaaS founders and early-stage businesses turn ideas into scalable digital products that actually make money and solve real problems.
 <br /><br />
-           As a Full Stack Developer, I focus on building fast, reliable, and user-friendly web applications that not only look clean but also support real business goals. From landing pages to full MVPs, I aim to create products that are easy to use, easy to maintain, and ready to grow as the business evolves.
+           Whether you're launching a new product, scaling an existing business, or automating operations, I build solutions that are easy to use, work reliably, and deliver measurable results. I focus on understanding your business goals first—then building systems that support those goals, not just pretty interfaces.
 <br /><br />
-          My approach goes beyond writing code — I focus on understanding the problem, improving user experience, and building solutions that deliver practical value from the start. Whether it’s validating a new idea, refining an existing platform, or improving performance and usability, I work with a product-oriented mindset to help founders move faster with clarity and confidence.
+          My approach: I listen to your challenges, understand your customers, and build solutions designed to increase revenue, save time, reduce costs, or improve customer satisfaction. From MVPs to full-scale platforms, I partner with you to create products that grow with your business.
           </p>
         </div>
       </div>

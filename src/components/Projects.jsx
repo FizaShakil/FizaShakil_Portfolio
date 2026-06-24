@@ -10,9 +10,9 @@ const Projects = () => {
     const categories = {
       1: "E-COMMERCE",
       2: "RESTAURANT", 
-      3: "ENTERPRISE",
-      4: "TRAVEL",
-      5: "API DEVELOPMENT"
+      3: "DOCUMENT MANAGEMENT",
+      4: "TRAVEL BOOKING",
+      5: "MARKETPLACE"
     };
     return categories[id] || "FULL-STACK";
   };
@@ -20,63 +20,45 @@ const Projects = () => {
   const getProjectMetrics = (id) => {
     const metrics = {
       1: [
-        { label: "CONVERSION", value: "48%" },
-        { label: "PERFORMANCE", value: "127%" },
-        { label: "SCALABILITY", value: "99.9%" }
+        { label: "SALES INCREASE", value: "48%" },
+        { label: "FASTER CHECKOUT", value: "+127%" },
+        { label: "UPTIME", value: "99.9%" }
       ],
       2: [
-        { label: "UPTIME", value: "99.9%" },
-        { label: "LATENCY", value: "<200ms" },
-        { label: "SECURITY", value: "RBAC" }
+        { label: "TIME SAVED", value: "80%" },
+        { label: "ORDER SPEED", value: "<2 min" },
+        { label: "ERROR REDUCTION", value: "95%" }
       ],
       3: [
-        { label: "ENGAGEMENT", value: "85%" },
-        { label: "LOAD TIME", value: "1.2s" },
-        { label: "RESPONSIVE", value: "100%" }
+        { label: "SEARCH TIME", value: "30 sec" },
+        { label: "ACCESSIBILITY", value: "24/7" },
+        { label: "MOBILE READY", value: "100%" }
       ],
       4: [
-        { label: "EFFICIENCY", value: "247%" },
-        { label: "AUTOMATION", value: "95%" },
-        { label: "PERFORMANCE", value: "+83%" }
+        { label: "CONVERSION +", value: "30%" },
+        { label: "MOBILE BOOKINGS", value: "+45%" },
+        { label: "LOAD TIME", value: "2.1s" }
       ],
       5: [
-        { label: "DESIGN", value: "A+" },
-        { label: "RESPONSIVE", value: "100%" },
-        { label: "PERFORMANCE", value: "98%" }
-      ],
-      6: [
-        { label: "UI/UX", value: "Modern" },
-        { label: "RESPONSIVE", value: "100%" },
-        { label: "PERFORMANCE", value: "Fast" }
-      ],
-      7: [
-        { label: "DESIGN", value: "Clean" },
-        { label: "RESPONSIVE", value: "100%" },
-        { label: "PERFORMANCE", value: "Optimized" }
-      ],
-      8: [
-        { label: "ENDPOINTS", value: "15+" },
-        { label: "SECURITY", value: "JWT" },
-        { label: "SCALABILITY", value: "High" }
+        { label: "HIRING TIME", value: "-70%" },
+        { label: "PROJECTS MATCHED", value: "95%+" },
+        { label: "USER SATISFACTION", value: "4.8/5" }
       ]
     };
     return metrics[id] || [
       { label: "QUALITY", value: "High" },
-      { label: "PERFORMANCE", value: "Fast" },
-      { label: "RESPONSIVE", value: "100%" }
+      { label: "RELIABILITY", value: "99.9%" },
+      { label: "MOBILE READY", value: "100%" }
     ];
   };
 
   const getProjectPositioning = (project) => {
     const positioning = {
-      1: "High-impact MERN stack e-commerce solution engineered for enterprise-grade scalability and maximum ROI. Features comprehensive admin panel and secure payment integration.",
-      2: "Full-stack restaurant management system with role-based access control, real-time order processing, and automated PDF invoice generation for streamlined operations.",
-      3: "AI-powered mail digitization interface with smart home commerce integration, featuring cloud inbox simulation, document classification flows, and IoT-driven product experiences.",
-      4: "Professionally designed travel experience platform showcasing immersive destinations with responsive design, smooth navigation, and premium visual storytelling.",
-      5: "Clean and professional corporate portfolio developed through team collaboration, focused on marketing strategy development and brand positioning optimization.",
-      6: "Sleek, responsive frontend clone demonstrating advanced UI/UX skills and modern web development practices with collaborative team development approach.",
-      7: "Responsive restaurant landing page showcasing modern design principles, optimized performance, and comprehensive business information presentation.",
-      8: "Robust backend API system for video streaming platform, featuring comprehensive YouTube-like functionality with scalable architecture and secure endpoints."
+      1: "A complete online store system that helps store owners manage inventory, track sales, and increase revenue. Customers enjoy smooth shopping, faster checkout, and secure payments.",
+      2: "A digital management system for restaurants that eliminates paper, automates billing, and speeds up service. Kitchen staff see orders instantly, customers get faster service, and errors drop to nearly zero.",
+      3: "A digital mail management system that organizes documents automatically and makes them instantly searchable. Find any document in seconds, access from anywhere, never lose important papers again.",
+      4: "A beautiful travel booking platform designed to inspire customers and drive bookings. Responsive design on all devices, fast loading, and intuitive booking process increase conversion and customer satisfaction.",
+      5: "A transparent marketplace connecting businesses with qualified developers. Projects are matched to right skills, pricing is clear, and both sides are protected with secure agreements."
     };
     return positioning[project.id] || project.description;
   };
@@ -102,15 +84,14 @@ const Projects = () => {
         {/* Header Section */}
         <div ref={headerRef} className={`text-center mb-16 md:mb-20 reveal-fade-up ${headerVisible ? 'visible' : ''}`}>
           <p className="text-[#507e4f] text-sm font-medium tracking-wider uppercase mb-4">
-            ENGINEERED SOLUTIONS
+            REAL-WORLD SOLUTIONS
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 px-4">
-            Architectural Showcase
+            Projects That Solve Real Business Problems
           </h1>
           <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
-            High-impact MERN stack solutions engineered for enterprise-grade scalability 
-            and maximum ROI. Focusing on robust system architecture and seamless 
-            user experience.
+            Each project built to solve a real business challenge—increasing sales, reducing costs, improving efficiency, 
+            or enhancing customer experience. Built to perform, scale, and deliver measurable results.
           </p>
         </div>
 

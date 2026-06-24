@@ -46,7 +46,7 @@ const HeroSection = () => {
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}>
-            Deciphering the digital language, bridging the gap between ideas and reality
+            I build digital products that increase revenue, save time, and solve real business problems
           </h2> 
 
           {/* Buttons with Staggered Entrance */}
