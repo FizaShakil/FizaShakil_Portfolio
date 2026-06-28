@@ -1,46 +1,47 @@
-import React from 'react';
 import Heading from './Reusable-Components/Heading';
 import servicesData from '../lists/servicesList';
+import SectionCTA from './Reusable-Components/SectionCTA';
 import { useStaggeredReveal } from '../hooks/useScrollReveal';
 
 const Services = () => {
-  const [topRowRef, topRowVisible] = useStaggeredReveal(3);
-  const [bottomRowRef, bottomRowVisible] = useStaggeredReveal(2);
+  const [gridRef, gridVisible] = useStaggeredReveal(servicesData.length);
 
   return (
-    <>
-      <div className="w-full px-4 md:px-20 pt-16 pb-16 text-center bg-[#040a0e] bg-opacity-[90%] text-white" id='services'>
-      <div>
-        <Heading heading={"Services"}/>
-      </div>
+    <section className="section-padding bg-[#040a0e]" id="services" aria-labelledby="services-heading">
+      <div className="section-container">
+        <Heading
+          heading="Solutions for Real Business Problems"
+          subtitle="Every service is designed around a specific challenge — and a measurable outcome."
+        />
 
-      {/* Top Row: 3 Cards */}
-      <div ref={topRowRef} className="flex flex-col items-center space-y-10 md:space-y-0 md:flex-row md:justify-center md:space-x-4 mb-12">
-        {servicesData.slice(0, 3).map((service, index) => (
-          <div
-            key={index}
-            className={`w-full max-w-xs md:h-[40vh] text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-4 py-3 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68] btn-premium stagger-item stagger-delay-${index + 1} ${topRowVisible ? 'visible' : ''}`}
-          >
-            <h1 className="text-xl font-semibold mb-2 text-white">{service.title}</h1>
-            <p className="text-gray-400 text-sm lg:text-base">{service.description}</p>
-          </div>
-        ))}
-      </div>
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+        >
+          {servicesData.map((service, index) => (
+            <div
+              key={service.title}
+              className={`text-left border-l-4 border-[#517E4F] card-base hover:bg-[#0f0e0e] px-5 py-4 sm:px-6 sm:py-5 transition-colors duration-300 stagger-item stagger-delay-${Math.min(index + 1, 6)} ${gridVisible ? 'visible' : ''}`}
+            >
+              <h3 className="text-subheading text-white font-semibold mb-2 sm:mb-3">{service.title}</h3>
+              <p className="text-gray-400 text-caption sm:text-sm leading-relaxed mb-3 sm:mb-4">{service.description}</p>
+              <div className="space-y-1.5 text-caption">
+                <p className="break-words">
+                  <span className="text-[#517E4F] font-medium">For: </span>
+                  <span className="text-gray-500">{service.forWho}</span>
+                </p>
+                <p className="break-words">
+                  <span className="text-[#517E4F] font-medium">Outcome: </span>
+                  <span className="text-gray-400">{service.outcome}</span>
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-      {/* Bottom Row: 2 Cards */}
-      <div ref={bottomRowRef} className="flex flex-col rounded-md items-center space-y-10 md:space-y-0 md:flex-row md:justify-center md:space-x-8">
-        {servicesData.slice(3).map((service, index) => (
-          <div
-            key={index}
-            className={`w-full max-w-xs md:max-w-xl md:w-[475px] text-left border-l-[6px] rounded-md border-[#517E4F] bg-[#191818] hover:bg-[#0f0e0e] shadow-md px-6 py-3 cursor-pointer transform transition-all duration-500 hover:shadow-2xl hover:border-[#6a9a68] btn-premium stagger-item stagger-delay-${index + 1} ${bottomRowVisible ? 'visible' : ''}`}
-          >
-            <h1 className="text-xl font-semibold mb-2">{service.title}</h1>
-            <p className="text-gray-400 text-sm lg:text-base">{service.description}</p>
-          </div>
-        ))}
+        <SectionCTA text="Get Started on Your Project" />
       </div>
-    </div>
-    </>
+    </section>
   );
 };
 

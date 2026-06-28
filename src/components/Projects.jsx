@@ -5,218 +5,156 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Projects = () => {
   const [headerRef, headerVisible] = useScrollReveal();
-  // Create enhanced project data for all projects with enterprise positioning
+
   const getProjectCategory = (id) => {
     const categories = {
-      1: "E-COMMERCE",
-      2: "RESTAURANT", 
-      3: "DOCUMENT MANAGEMENT",
-      4: "TRAVEL BOOKING",
-      5: "MARKETPLACE"
+      1: 'E-COMMERCE',
+      2: 'RESTAURANT',
+      3: 'DOCUMENT MANAGEMENT',
+      4: 'TRAVEL BOOKING',
+      5: 'MARKETPLACE',
     };
-    return categories[id] || "FULL-STACK";
+    return categories[id] || 'FULL-STACK';
   };
 
-  const getProjectMetrics = (id) => {
-    const metrics = {
-      1: [
-        { label: "SALES INCREASE", value: "48%" },
-        { label: "FASTER CHECKOUT", value: "+127%" },
-        { label: "UPTIME", value: "99.9%" }
-      ],
-      2: [
-        { label: "TIME SAVED", value: "80%" },
-        { label: "ORDER SPEED", value: "<2 min" },
-        { label: "ERROR REDUCTION", value: "95%" }
-      ],
-      3: [
-        { label: "SEARCH TIME", value: "30 sec" },
-        { label: "ACCESSIBILITY", value: "24/7" },
-        { label: "MOBILE READY", value: "100%" }
-      ],
-      4: [
-        { label: "CONVERSION +", value: "30%" },
-        { label: "MOBILE BOOKINGS", value: "+45%" },
-        { label: "LOAD TIME", value: "2.1s" }
-      ],
-      5: [
-        { label: "HIRING TIME", value: "-70%" },
-        { label: "PROJECTS MATCHED", value: "95%+" },
-        { label: "USER SATISFACTION", value: "4.8/5" }
-      ]
-    };
-    return metrics[id] || [
-      { label: "QUALITY", value: "High" },
-      { label: "RELIABILITY", value: "99.9%" },
-      { label: "MOBILE READY", value: "100%" }
-    ];
-  };
-
-  const getProjectPositioning = (project) => {
-    const positioning = {
-      1: "A complete online store system that helps store owners manage inventory, track sales, and increase revenue. Customers enjoy smooth shopping, faster checkout, and secure payments.",
-      2: "A digital management system for restaurants that eliminates paper, automates billing, and speeds up service. Kitchen staff see orders instantly, customers get faster service, and errors drop to nearly zero.",
-      3: "A digital mail management system that organizes documents automatically and makes them instantly searchable. Find any document in seconds, access from anywhere, never lose important papers again.",
-      4: "A beautiful travel booking platform designed to inspire customers and drive bookings. Responsive design on all devices, fast loading, and intuitive booking process increase conversion and customer satisfaction.",
-      5: "A transparent marketplace connecting businesses with qualified developers. Projects are matched to right skills, pricing is clear, and both sides are protected with secure agreements."
-    };
-    return positioning[project.id] || project.description;
-  };
-
-  // Enhanced project data with all projects
-  const showcaseProjects = projects.map(project => ({
+  const showcaseProjects = projects.map((project) => ({
     ...project,
-    category: getProjectCategory(project.id),
-    positioning: getProjectPositioning(project),
-    metrics: getProjectMetrics(project.id)
+    category: project.industry || getProjectCategory(project.id),
+    metrics: project.metrics || [],
   }));
 
   return (
     <>
-      <SEO 
-        title="Projects | Fiza Shakil - Full Stack Developer Portfolio"
-        description="Explore my portfolio of full-stack web applications built with React.js, Node.js, MySQL, and MongoDB. Featuring e-commerce platforms, restaurant management systems, and SaaS solutions."
+      <SEO
+        title="Case Studies | Fiza Shakil — Business Results Through Custom Web Solutions"
+        description="Real case studies showing how I helped businesses increase sales, automate operations, and improve customer experience through custom web development."
         canonical="https://fiza-shakil.dev/projects"
-        keywords="Fiza Shakil projects, React projects, Node.js applications, MERN stack portfolio, full stack projects, web development portfolio"
+        keywords="web development case studies, business automation, e-commerce development, SaaS case studies, restaurant management system, landing page results"
       />
-      <section className="bg-black text-white pt-10 pb-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div ref={headerRef} className={`text-center mb-16 md:mb-20 reveal-fade-up ${headerVisible ? 'visible' : ''}`}>
-          <p className="text-[#507e4f] text-sm font-medium tracking-wider uppercase mb-4">
-            REAL-WORLD SOLUTIONS
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 px-4">
-            Projects That Solve Real Business Problems
-          </h1>
-          <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
-            Each project built to solve a real business challenge—increasing sales, reducing costs, improving efficiency, 
-            or enhancing customer experience. Built to perform, scale, and deliver measurable results.
-          </p>
-        </div>
+      <section className="section-padding bg-black text-white pb-28 md:pb-20">
+        <div className="section-container">
+          <div ref={headerRef} className={`text-center mb-10 sm:mb-16 reveal-fade-up ${headerVisible ? 'visible' : ''}`}>
+            <p className="text-[#507e4f] text-caption font-medium tracking-wider uppercase mb-3">
+              CASE STUDIES
+            </p>
+            <h1 className="text-display text-white font-bold mb-4 text-balance px-2">
+              Real Problems. Measurable Results.
+            </h1>
+            <p className="text-gray-400 text-body max-w-prose mx-auto">
+              Each project built to solve a real business challenge — increasing sales, reducing costs,
+              improving efficiency, or enhancing customer experience.
+            </p>
+          </div>
 
-        {/* Projects Showcase */}
-        <div className="space-y-20 md:space-y-32">
-          {showcaseProjects.map((project, index) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
-              isReversed={index % 2 === 1}
-            />
-          ))}
+          <div className="space-y-12 sm:space-y-16 lg:space-y-24">
+            {showcaseProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} isReversed={index % 2 === 1} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };
 
-// Reusable ProjectCard Component
 const ProjectCard = ({ project, isReversed }) => {
   const [cardRef, cardVisible] = useScrollReveal();
-  
+  const hasDemo = project.demoLink && project.demoLink !== '#';
+  const hasGithub = project.githubLink && project.githubLink !== '#';
+
   return (
-    <div 
+    <article
       ref={cardRef}
-      className={`flex flex-col ${isReversed ? 'xl:flex-row-reverse' : 'xl:flex-row'} 
-                  items-center gap-8 md:gap-12 xl:gap-16 group reveal-fade-up ${cardVisible ? 'visible' : ''}`}
+      className={`flex flex-col ${isReversed ? 'xl:flex-row-reverse' : 'xl:flex-row'} items-stretch gap-6 sm:gap-8 xl:gap-12 reveal-fade-up ${cardVisible ? 'visible' : ''}`}
     >
-      {/* Project Image */}
-      <div className="w-full xl:flex-1 relative">
-        <div className="relative overflow-hidden rounded-2xl bg-gray-900 p-4 sm:p-6 lg:p-8 
-                        transform transition-all duration-500 group-hover:scale-[1.02] 
-                        group-hover:shadow-2xl group-hover:shadow-[#507e4f]/20">
+      <div className="w-full xl:flex-1">
+        <div className="relative overflow-hidden rounded-2xl bg-gray-900 p-3 sm:p-5 lg:p-6">
           <img
             src={project.localImage || project.image}
-            alt={`${project.title} - Full Stack Web Application Project Screenshot`}
-            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover rounded-xl 
-                       transform transition-transform duration-700 group-hover:scale-105"
+            alt={`${project.title} — project screenshot`}
+            className="w-full aspect-[16/10] sm:aspect-[4/3] xl:aspect-[16/10] object-cover rounded-xl"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
         </div>
       </div>
 
-      {/* Project Content */}
-      <div className="w-full xl:flex-1 space-y-4 md:space-y-6 text-center xl:text-left">
-        {/* Category & Title */}
-        <div>
-          <div className="flex items-center justify-center xl:justify-start gap-3 md:gap-4 mb-3 md:mb-4 flex-wrap">
-            <span className="text-[#507e4f] text-xs font-semibold tracking-wider uppercase">
-              {project.category}
-            </span>
-            <span className="text-gray-600 text-xs font-medium tracking-wider uppercase">
-              MERN ECOSYSTEM
-            </span>
-          </div>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl font-bold mb-3 md:mb-4 leading-tight">
-            {project.title}
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto xl:mx-0">
-            {project.positioning}
+      <div className="w-full xl:flex-1 flex flex-col gap-4 text-left">
+        <span className="text-[#507e4f] text-caption font-semibold tracking-wider uppercase">
+          {project.category}
+        </span>
+
+        <h2 className="text-heading text-white font-bold text-balance">{project.title}</h2>
+
+        {project.businessChallenge && (
+          <p className="text-gray-500 text-caption sm:text-sm">
+            <span className="text-gray-400 font-medium">Challenge: </span>
+            {project.businessChallenge}
           </p>
-        </div>
+        )}
+        {project.solution && (
+          <p className="text-gray-400 text-caption sm:text-sm leading-relaxed">
+            <span className="text-gray-300 font-medium">Solution: </span>
+            {project.solution}
+          </p>
+        )}
+        {project.businessOutcome && (
+          <p className="text-[#507e4f] text-caption sm:text-sm font-medium leading-snug">
+            <span className="font-semibold">Result: </span>
+            {project.businessOutcome}
+          </p>
+        )}
 
-        {/* Metrics */}
-        <div className="flex flex-wrap justify-center xl:justify-start gap-4 md:gap-6">
-          {project.metrics.map((metric, idx) => (
-            <div key={idx} className="text-center min-w-[80px]">
-              <div className="text-[#507e4f] text-xs font-medium tracking-wider uppercase mb-1">
-                {metric.label}
+        {project.metrics.length > 0 && (
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-sm xl:max-w-none">
+            {project.metrics.map((metric) => (
+              <div key={metric.label} className="text-center bg-[#191818] rounded-lg py-2.5 px-1 min-w-0">
+                <p className="text-white text-sm sm:text-base font-bold truncate">{metric.value}</p>
+                <p className="text-[#507e4f] text-[9px] sm:text-xs font-medium uppercase leading-tight mt-0.5 line-clamp-2">
+                  {metric.label}
+                </p>
               </div>
-              <div className="text-white text-base md:text-lg font-bold">
-                {metric.value}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-3 md:gap-4 pt-2 md:pt-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
           <Link
             to={`/case-study/${project.id}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#507e4f] text-white px-4 md:px-6 py-3 
-                       rounded-lg font-medium transition-all duration-300 
-                       hover:bg-[#5d8a5a] hover:scale-105 hover:shadow-lg 
-                       hover:shadow-[#507e4f]/30 focus:outline-none focus:ring-2 
-                       focus:ring-[#507e4f] focus:ring-offset-2 focus:ring-offset-black btn-premium text-sm md:text-base"
+            className="btn-primary btn-premium inline-flex items-center justify-center gap-2 w-full sm:w-auto"
           >
             View Case Study
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-          
-          <a
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-600 text-gray-300 
-                       px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-300 
-                       hover:border-gray-400 hover:text-white hover:scale-105 
-                       focus:outline-none focus:ring-2 focus:ring-gray-500 
-                       focus:ring-offset-2 focus:ring-offset-black btn-premium text-sm md:text-base"
-          >
-            Live Demo
-          </a>
-          
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-12 h-12 border border-gray-600 
-                       text-gray-400 rounded-lg transition-all duration-300 
-                       hover:border-gray-400 hover:text-white hover:scale-105 
-                       focus:outline-none focus:ring-2 focus:ring-gray-500 
-                       focus:ring-offset-2 focus:ring-offset-black btn-premium"
-            title="View Source Code"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
+
+          {hasDemo && (
+            <a
+              href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary btn-premium inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+            >
+              Live Demo
+            </a>
+          )}
+
+          {hasGithub && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="touch-target border border-gray-600 text-gray-400 rounded-lg hover:border-gray-400 hover:text-white transition-colors self-center sm:self-auto"
+              aria-label="View source code on GitHub"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+          )}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

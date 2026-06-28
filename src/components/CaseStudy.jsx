@@ -402,12 +402,12 @@ const CTASection = ({ caseStudy }) => (
             <button className="w-full sm:w-auto bg-[#507e4f] text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-sm md:text-base hover:bg-[#5d8a5a] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#507e4f]/30">
               View Repository
             </button>
-            <Link 
-              to="/contact"
+            <a
+              href="/#contact"
               className="w-full sm:w-auto border border-gray-600 text-gray-300 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-sm md:text-base hover:border-gray-400 hover:text-white transition-all duration-300 hover:scale-105 text-center"
             >
-              Contact Me
-            </Link>
+              Book a Free Consultation
+            </a>
           </div>
         </div>
       </div>

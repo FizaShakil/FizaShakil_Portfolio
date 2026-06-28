@@ -6,6 +6,7 @@ import CaseStudy from './components/CaseStudy'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingMobileCTA from './components/FloatingMobileCTA'
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
 
 function AppContent() {
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar />
       <ScrollToTop/>
       <Routes>
@@ -29,7 +30,8 @@ function AppContent() {
       </Routes>
       <Contact/>
       <Footer/>
-    </>
+      <FloatingMobileCTA />
+    </div>
   );
 }
 
