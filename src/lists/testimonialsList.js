@@ -1,21 +1,25 @@
 const testimonialsData = [
   {
     name: "Mujeebullah",
-    role: "Video Editor with 4+ years experience",
-    feedback: "Fiza, thank you for creating my portfolio website. The project took time, but your flexibility made everything smooth, and I’m very happy with the quality and your service. 10/10 from my side",
+    role: "Video Editor",
+    company: "Freelance Creative",
+    feedback: "Fiza understood exactly what I needed — a portfolio that brings in clients, not just looks pretty. She was flexible, communicative, and delivered something I'm genuinely proud to share. 10/10.",
+    outcome: "Professional portfolio that attracts new clients",
   },
-    {
+  {
     name: "Marcus Thorne",
-    role: "UK based SaaS Founder",
-    feedback: "To be honest, we were hesitant to hire again after a really disappointing experience with a previous developer. But working with you changed everything, fiza. Your expertise and professionalism reminded us that there are still true experts out there who actually deliver on their promises. Our product is exactly where it needs to be. Will surely choose you for the next project."
-    
-},
-      {
+    role: "SaaS Founder",
+    company: "UK-based Startup",
+    feedback: "We were burned by a previous developer and hesitant to try again. Fiza changed that completely. Clear communication, on-time delivery, and a product that actually works. We'll be back for the next phase.",
+    outcome: "Product launched on time after a failed previous attempt",
+  },
+  {
     name: "Executive Chef",
-    role: "Saffron & Stone Bistro",
-    feedback: "Fiza built an incredibly intuitive kitchen management dashboard for us. Before this, our order tracking was a mess, but now everything from real-time inventory to staff scheduling is in one place. It’s clean, fast, and most importantly, it didn't crash once during our busiest holiday weekend. Really happy from her work"
+    role: "Kitchen Operations",
+    company: "Saffron & Stone Bistro",
+    feedback: "Our kitchen was chaos before this system. Now orders flow automatically, inventory is tracked in real time, and it didn't crash once during our busiest holiday weekend. It genuinely made our lives easier.",
+    outcome: "Zero downtime during peak season, streamlined kitchen ops",
   },
 ];
 
-export default testimonialsData
-
+export default testimonialsData;
