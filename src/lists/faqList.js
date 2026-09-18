@@ -1,27 +1,33 @@
 const faqData = [
   {
-    question: "Will communication be smooth throughout the project?",
-    answer: "Yes. You'll receive regular updates in plain language — no technical jargon unless you want it. I'm available via email and scheduled calls, and I respond within 24 hours on business days.",
+    question: "What kind of work do you take on?",
+    answer:
+      "I build product features end-to-end — full-stack web applications, AI-powered workflows, dashboards, authentication systems, notification pipelines, and product MVPs. If it's a feature users interact with daily, that's my focus.",
   },
   {
-    question: "Will deadlines be met?",
-    answer: "I set realistic timelines upfront during our discovery call and stick to them. If anything changes, you'll know immediately with a clear explanation and revised plan.",
+    question: "Do you work on both frontend and backend?",
+    answer:
+      "Yes. I own features across both layers. On SumItUp, that meant dashboard UI and backend delivery logic. On Fashionista and RMS, it meant the complete stack from React frontend to API and database.",
   },
   {
-    question: "Will I receive support after launch?",
-    answer: "Absolutely. Every project includes a post-launch support period. I'm also available for ongoing maintenance, feature additions, and scaling as your business grows.",
+    question: "How do you communicate during a project?",
+    answer:
+      "Plain language, regular updates, and honest scope reporting. I explain technical decisions in terms of user impact so you always understand what's being built and why — no jargon unless you want the details.",
   },
   {
-    question: "Can the project scale as my business grows?",
-    answer: "That's built into every solution from day one. I design systems that handle more users, more data, and more features without needing a complete rebuild.",
+    question: "Can I see examples of your work?",
+    answer:
+      "Every project on this site includes a detailed case study explaining what I built, why it mattered, and how it works. Live demos and GitHub repositories are linked where available.",
   },
   {
-    question: "How involved will I be in the process?",
-    answer: "As much as you want to be. Some clients prefer weekly check-ins; others want to review at key milestones. Either way, nothing moves forward without your approval on design and direction.",
+    question: "Are you available for new projects?",
+    answer:
+      "Yes — I'm currently taking on contract work and product collaborations. Reach out via the contact form or LinkedIn and I'll respond within 24 hours.",
   },
   {
-    question: "Can you improve my existing website or system?",
-    answer: "Yes. Whether it's a slow website, a clunky admin panel, or an outdated booking system — I can audit what you have and recommend the most cost-effective improvements.",
+    question: "What technologies do you use?",
+    answer:
+      "React, TypeScript, Node.js, Express, MongoDB, MySQL, PostgreSQL, and Tailwind CSS — chosen based on what the product needs, not what's trendy. The full stack list is at the bottom of this page for technical reviewers.",
   },
 ];
 

@@ -1,38 +1,33 @@
 const processSteps = [
   {
     step: "01",
-    title: "Discovery Call",
-    description: "We discuss your goals, challenges, and what success looks like for your business.",
+    title: "Understand",
+    description:
+      "I learn the business, the users, and the problem. What is the current process, where does it break, and what should the software actually solve?",
   },
   {
     step: "02",
-    title: "Planning",
-    description: "I map out features, timelines, and priorities so you know exactly what to expect.",
+    title: "Plan",
+    description:
+      "I define the workflow, requirements, and solution — the screens, the data, and the rules — before writing code. You know what will be built and why.",
   },
   {
     step: "03",
-    title: "Design",
-    description: "You see how the product will look and feel before a single line of code is written.",
+    title: "Build",
+    description:
+      "I design and develop the product — frontend, backend, database, and integrations — in working increments so nothing surprises you.",
   },
   {
     step: "04",
-    title: "Development",
-    description: "I build your solution with regular updates so you're never left wondering about progress.",
+    title: "Refine",
+    description:
+      "I test the full flow, fix edge cases, and polish the experience. The product should not just work — it should feel right to use.",
   },
   {
     step: "05",
-    title: "Testing",
-    description: "Everything is tested thoroughly to ensure it works reliably for your team and customers.",
-  },
-  {
-    step: "06",
     title: "Launch",
-    description: "Your product goes live with a smooth handover and everything documented clearly.",
-  },
-  {
-    step: "07",
-    title: "Support",
-    description: "I stay available for fixes, improvements, and scaling as your business grows.",
+    description:
+      "We deploy and I support the product — making sure it runs reliably and iterating on what we learn after launch.",
   },
 ];
 
