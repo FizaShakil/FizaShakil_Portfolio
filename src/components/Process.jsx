@@ -1,5 +1,4 @@
-import Heading from './Reusable-Components/Heading';
-import SectionCTA from './Reusable-Components/SectionCTA';
+import SectionHeading from './Reusable-Components/SectionHeading';
 import processSteps from '../lists/processList';
 import { useStaggeredReveal } from '../hooks/useScrollReveal';
 
@@ -7,30 +6,40 @@ const Process = () => {
   const [gridRef, gridVisible] = useStaggeredReveal(processSteps.length);
 
   return (
-    <section className="section-padding bg-[#040a0e]" id="process" aria-labelledby="process-heading">
-      <div className="section-container">
-        <Heading
-          heading="How We'll Work Together"
-          subtitle="A clear, predictable process so you always know what happens next."
+    <section className="section section-bg-a border-t border-line py-16 lg:py-20" id="process">
+      <div className="section-inner">
+        <SectionHeading
+          kicker="How I work"
+          heading={
+            <>
+              A clear path from problem to{' '}
+              <span className="serif-accent">launch</span>
+            </>
+          }
+          intro="You always know what's being built, why, and what comes next. No surprises, no black-box process."
+          align="center"
         />
 
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5"
-        >
+        <ol ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-5 mt-10 lg:mt-12 border-t border-line">
           {processSteps.map((step, index) => (
-            <div
+            <li
               key={step.title}
-              className={`card-base p-5 sm:p-6 hover:border-[#517E4F]/50 transition-colors duration-300 stagger-item stagger-delay-${Math.min(index + 1, 6)} ${gridVisible ? 'visible' : ''}`}
+              className={`relative group stagger-item stagger-delay-${Math.min(index + 1, 6)} ${gridVisible ? 'visible' : ''} border-b border-r border-line`}
             >
-              <span className="text-[#517E4F] font-mono text-caption font-bold">{step.step}</span>
-              <h3 className="text-white font-semibold text-body mt-1.5 mb-1.5">{step.title}</h3>
-              <p className="text-gray-400 text-caption sm:text-sm leading-relaxed">{step.description}</p>
-            </div>
+              <div className="flex flex-col gap-3 h-full p-6 lg:px-6 lg:py-8">
+                <span className="font-mono text-kicker text-accent">{step.step}</span>
+                <h3 className="text-body font-medium text-ink">{step.title}</h3>
+                <p className="text-caption text-ink-faint leading-relaxed">{step.description}</p>
+              </div>
+              <span className="absolute left-0 top-0 h-px w-0 bg-accent transition-all duration-500 group-hover:w-full" aria-hidden="true" />
+            </li>
           ))}
-        </div>
+        </ol>
 
-        <SectionCTA text="Start With a Discovery Call" />
+        <p className="text-center text-body text-ink-muted max-w-2xl mx-auto mt-10">
+          I don't just receive requirements and code. I think through the solution
+          with you — from the outcome backwards.
+        </p>
       </div>
     </section>
   );

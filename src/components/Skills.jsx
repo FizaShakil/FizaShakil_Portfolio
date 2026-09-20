@@ -1,44 +1,87 @@
-import Heading from './Reusable-Components/Heading';
-import { FaHtml5, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
+import SectionHeading from './Reusable-Components/SectionHeading';
+import { FaReact, FaNodeJs, FaNetworkWired, FaLock, FaCodeBranch } from 'react-icons/fa6';
 import {
-  SiTailwindcss, SiNextdotjs, SiExpress, SiMongodb,
-  SiMysql, SiSupabase, SiPostgresql, SiTypescript,
+  SiNextdotjs, SiExpress, SiMongodb, SiPostgresql, SiTypescript,
+  SiPrisma, SiTailwindcss, SiMysql,
 } from 'react-icons/si';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const skills = [
-  { name: 'React', icon: <FaReact /> },
-  { name: 'Next.js', icon: <SiNextdotjs /> },
-  { name: 'TypeScript', icon: <SiTypescript /> },
-  { name: 'Node.js', icon: <FaNodeJs /> },
-  { name: 'MongoDB', icon: <SiMongodb /> },
-  { name: 'PostgreSQL', icon: <SiPostgresql /> },
-  { name: 'MySQL', icon: <SiMysql /> },
-  { name: 'Tailwind', icon: <SiTailwindcss /> },
-  { name: 'Express', icon: <SiExpress /> },
-  { name: 'Supabase', icon: <SiSupabase /> },
-  { name: 'JavaScript', icon: <FaJs /> },
-  { name: 'HTML/CSS', icon: <FaHtml5 /> },
+const skillGroups = [
+  {
+    no: '01',
+    title: 'Frontend',
+    skills: [
+      { name: 'React', icon: FaReact },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+    ],
+  },
+  {
+    no: '02',
+    title: 'Backend & APIs',
+    skills: [
+      { name: 'Node.js', icon: FaNodeJs },
+      { name: 'Express', icon: SiExpress },
+      { name: 'REST APIs', icon: FaNetworkWired },
+      { name: 'JWT Auth', icon: FaLock },
+    ],
+  },
+  {
+    no: '03',
+    title: 'Data & Tools',
+    skills: [
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'Prisma', icon: SiPrisma },
+      { name: 'Git & CI/CD', icon: FaCodeBranch },
+    ],
+  },
 ];
 
 const Skills = () => {
+  const [ref, visible] = useScrollReveal();
+
   return (
-    <section className="section-padding bg-[#04090d] border-t border-gray-800/50 pb-24 md:pb-16" id="skills" aria-labelledby="skills-heading">
-      <div className="section-container max-w-4xl text-center">
-        <Heading
-          heading="Technical Foundation"
-          subtitle="Modern, proven tools power every project — kept here for technical reviewers."
+    <section className="section section-bg-b border-t border-line py-16 lg:py-20" id="skills" aria-labelledby="skills-heading">
+      <div className="section-inner">
+        <SectionHeading
+          kicker="Stack"
+          heading={
+            <>
+              Tools chosen for the{' '}
+              <span className="serif-accent">problem</span>, not for show
+            </>
+          }
+          intro="A focused set of technologies. I'd rather do fewer things well than depend on a long list of things I barely use."
         />
 
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="flex items-center gap-2 bg-[#191818] border border-gray-800 rounded-full px-3 sm:px-4 py-2 text-gray-400 text-caption sm:text-sm hover:border-[#517E4F]/30 transition-colors"
-            >
-              <span className="text-[#517E4F] text-sm sm:text-base shrink-0">{skill.icon}</span>
-              {skill.name}
-            </div>
-          ))}
+        <div ref={ref} className={`reveal-fade-up mt-10 ${visible ? 'visible' : ''}`}>
+          <div className="grid md:grid-cols-3 border-t border-l border-line">
+            {skillGroups.map((group, gi) => (
+              <div key={group.title} className={`border-b border-r border-line p-7 lg:p-9 ${gi === 0 ? 'md:col-span-3 lg:col-span-1' : ''}`}>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="font-mono text-kicker text-accent">{group.no}</span>
+                  <h3 className="text-body font-medium text-ink">{group.title}</h3>
+                </div>
+                <ul className="mt-4 flex flex-col">
+                  {group.skills.map((skill) => {
+                    const Icon = skill.icon;
+                    return (
+                      <li
+                        key={skill.name}
+                        className="flex items-center gap-3 py-2 text-body text-ink-muted border-t border-line first:border-t-0"
+                      >
+                        <Icon className="w-3.5 h-3.5 text-accent-soft shrink-0" />
+                        <span>{skill.name}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
