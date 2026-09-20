@@ -1,157 +1,115 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { ArrowRight } from './Reusable-Components/Arrow';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa6';
 
 const whatHappensNext = [
   { step: '1', text: "I'll review your message and respond within 24 hours." },
-  { step: '2', text: "We'll schedule a free 30-minute discovery call to discuss your goals." },
-  { step: '3', text: "You'll receive a clear proposal with timeline, scope, and investment." },
-  { step: '4', text: "No pressure — you decide if we're the right fit." },
+  { step: '2', text: "We'll discuss the product, the feature, and what success looks like." },
+  { step: '3', text: "You'll get an honest assessment of scope, timeline, and approach." },
+  { step: '4', text: 'No pressure — you decide if we build together.' },
 ];
 
-const contactDetails = [
-  {
-    label: 'Email',
-    value: 'fizashakilofficial@gmail.com',
-    href: 'mailto:fizashakilofficial@gmail.com',
-    icon: 'fa-solid fa-envelope',
-  },
-  {
-    label: 'Location',
-    value: 'Pakistan · Remote Worldwide',
-    icon: 'fa-solid fa-location-dot',
-  },
-  {
-    label: 'Availability',
-    value: 'Mon – Fri, 9 AM – 6 PM PKT',
-    icon: 'fa-solid fa-clock',
-  },
+const meta = [
+  { label: 'Email', value: 'fizashakilofficial@gmail.com', href: 'mailto:fizashakilofficial@gmail.com' },
+  { label: 'Location', value: 'Pakistan · Remote worldwide' },
+  { label: 'Availability', value: 'Mon – Fri, 9 AM – 6 PM PKT' },
 ];
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('mkgzebla');
-  const [sectionRef, sectionVisible] = useScrollReveal();
+  const [leftRef, leftVisible] = useScrollReveal();
+  const [formRef, formVisible] = useScrollReveal();
 
   if (state.succeeded) {
     return (
-      <section className="section-padding flex flex-col items-center justify-center bg-[#040a0e] pb-28 md:pb-20" id="contact">
-        <div className="text-center max-w-lg w-full px-2">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#517E4F] rounded-full flex items-center justify-center mx-auto mb-5">
-            <i className="fa-solid fa-check text-xl sm:text-2xl text-white" aria-hidden="true"></i>
-          </div>
-          <h2 className="text-heading text-white font-bold mb-3">Message Received!</h2>
-          <p className="text-gray-400 text-body mb-6">
+      <section className="section section-bg-b py-16 lg:py-24" id="contact">
+        <div className="section-inner max-w-2xl text-center flex flex-col items-center gap-6">
+          <span className="flex items-center justify-center w-12 h-12 border border-accent bg-base text-accent">
+            ✓
+          </span>
+          <h2 className="text-heading font-medium text-ink text-balance">Message received.</h2>
+          <p className="text-body text-ink-muted leading-relaxed">
             Thanks for reaching out. I'll review your message and get back to you within 24 hours.
           </p>
-          <div className="card-base p-5 sm:p-6 text-left space-y-3">
-            <p className="text-white font-semibold text-sm">What happens next:</p>
+          <ol className="hairline-t pt-6 mt-2 text-left w-full max-w-md">
             {whatHappensNext.map((item) => (
-              <div key={item.step} className="flex gap-3 text-caption sm:text-sm">
-                <span className="text-[#517E4F] font-bold shrink-0">{item.step}.</span>
-                <span className="text-gray-400">{item.text}</span>
-              </div>
+              <li key={item.step} className="flex gap-4 py-3 text-caption text-ink-muted border-b border-line">
+                <span className="font-mono text-accent shrink-0">{item.step}</span>
+                <span>{item.text}</span>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="section-padding bg-[#040a0e] pb-28 md:pb-20 scroll-mt-nav" id="contact" aria-labelledby="contact-heading">
-      <div ref={sectionRef} className={`section-container reveal-fade-up ${sectionVisible ? 'visible' : ''}`}>
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-          {/* Intro — first on mobile, left on desktop */}
-          <div className="w-full lg:flex-1 lg:max-w-lg space-y-6">
-            <div>
-              <p className="text-[#517E4F] text-caption font-semibold uppercase tracking-widest mb-3">
-                Get Started
-              </p>
-              <h2 id="contact-heading" className="text-heading text-white font-bold leading-tight text-balance">
-                Let's Talk About{' '}
-                <span className="text-[#517E4F]">Your Project</span>
-              </h2>
-            </div>
-
-            <p className="text-gray-400 text-body leading-relaxed max-w-prose">
-              Share your business challenge and what success looks like. I'll respond within 24 hours
-              with honest feedback — no sales pressure, no jargon.
-            </p>
-
-            <ul className="space-y-3">
-              {contactDetails.map((item) => (
-                <li key={item.label} className="flex items-start gap-3">
-                  <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-[#517E4F]/15 border border-[#517E4F]/20 shrink-0 mt-0.5">
-                    <i className={`${item.icon} text-[#517E4F] text-sm`} aria-hidden="true"></i>
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-gray-500 text-[11px] font-semibold uppercase tracking-wider mb-0.5">
-                      {item.label}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-gray-200 text-caption sm:text-sm hover:text-[#517E4F] transition-colors break-all"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-gray-200 text-caption sm:text-sm">{item.value}</p>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex items-center gap-3 pt-1">
-              <span className="text-gray-500 text-caption font-medium uppercase tracking-wider">Connect</span>
-              <div className="flex gap-2">
-                {[
-                  { href: 'https://linkedin.com/in/fiza-shakil', icon: 'fab fa-linkedin', label: 'LinkedIn' },
-                  { href: 'https://github.com/FizaShakil', icon: 'fab fa-github', label: 'GitHub' },
-                ].map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-800 bg-[#191818] text-gray-400 hover:text-[#517E4F] hover:border-[#517E4F]/40 transition-colors"
-                    aria-label={social.label}
-                  >
-                    <i className={`${social.icon} text-base`}></i>
-                  </a>
-                ))}
+    <section className="section section-bg-b border-t border-line py-16 lg:py-24 scroll-mt-nav" id="contact" aria-labelledby="contact-heading">
+      <div className="section-inner">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left — invitation */}
+          <div className="lg:col-span-5">
+            <div ref={leftRef} className={`lg:sticky lg:top-24 reveal-fade-up flex flex-col gap-8 ${leftVisible ? 'visible' : ''}`}>
+              <div>
+                <p className="kicker-rule">Let's talk</p>
+                <h2 id="contact-heading" className="text-display font-medium tracking-tight text-balance mt-6">
+                  Tell me the problem.{' '}
+                  <span className="serif-accent">I'll map the build.</span>
+                </h2>
               </div>
-            </div>
 
-            <div className="card-base p-5 sm:p-6">
-              <p className="text-white font-semibold text-sm mb-3">What happens after you reach out</p>
-              <ol className="space-y-2.5">
-                {whatHappensNext.map((item) => (
-                  <li key={item.step} className="flex gap-3 text-caption sm:text-sm text-gray-400">
-                    <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#517E4F]/20 text-[#517E4F] text-[10px] font-bold shrink-0 mt-0.5">
-                      {item.step}
-                    </span>
-                    {item.text}
-                  </li>
-                ))}
-              </ol>
+              <p className="text-body text-ink-muted leading-relaxed max-w-prose">
+                Describe the feature or product you're building. I'll respond within
+                24 hours with an honest read on approach and scope — no sales
+                pressure, no jargon.
+              </p>
+
+              <div className="hairline-t pt-6">
+                <ul className="flex flex-col">
+                  {meta.map((item) => (
+                    <li key={item.label} className="flex items-baseline gap-6 py-3 border-b border-line last:border-b-0">
+                      <span className="text-kicker text-ink-faint w-24 shrink-0">{item.label}</span>
+                      {item.href ? (
+                        <a href={item.href} className="text-body text-ink hover:text-accent-soft transition-colors break-all">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <span className="text-body text-ink-muted">{item.value}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex items-center gap-3 mt-6">
+                  <span className="text-caption text-ink-faint uppercase tracking-widest">Connect</span>
+                  <span className="w-px h-4 bg-line-strong" aria-hidden="true" />
+                  <a href="https://linkedin.com/in/fiza-shakil" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center justify-center w-10 h-10 border border-line text-ink-muted hover:text-accent-soft hover:border-accent transition-colors">
+                    <FaLinkedinIn className="w-4 h-4" />
+                  </a>
+                  <a href="https://github.com/FizaShakil" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex items-center justify-center w-10 h-10 border border-line text-ink-muted hover:text-accent-soft hover:border-accent transition-colors">
+                    <FaGithub className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Form — second on mobile, right on desktop */}
-          <div className="w-full lg:flex-1 lg:max-w-lg">
-            <div className="card-base p-5 sm:p-8 lg:p-10">
-              <div className="mb-6 pb-5 border-b border-gray-800">
-                <h3 className="text-white font-semibold text-subheading">Send a Message</h3>
-                <p className="text-gray-500 text-caption mt-1">
-                  Fill in the details below and I'll be in touch shortly.
+          {/* Right — form */}
+          <div className="lg:col-span-6 lg:col-start-7">
+            <div ref={formRef} className={`reveal-fade-up border border-line bg-base-2 p-7 sm:p-10 ${formVisible ? 'visible' : ''}`}>
+              <div className="hairline-b pb-6 mb-8">
+                <h3 className="text-subheading font-medium text-ink">Send a message</h3>
+                <p className="text-caption text-ink-faint mt-1">
+                  The more specific, the better — a few lines is enough.
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5" aria-label="Contact form">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6" aria-label="Contact form">
                 <div>
-                  <label htmlFor="name" className="block text-caption font-medium text-gray-400 mb-1.5">
-                    Your Name <span className="text-[#517E4F]">*</span>
+                  <label htmlFor="name" className="block text-caption font-medium text-ink-muted mb-2">
+                    Your name <span className="text-accent">*</span>
                   </label>
                   <input
                     id="name"
@@ -165,8 +123,8 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-caption font-medium text-gray-400 mb-1.5">
-                    Email Address <span className="text-[#517E4F]">*</span>
+                  <label htmlFor="email" className="block text-caption font-medium text-ink-muted mb-2">
+                    Email address <span className="text-accent">*</span>
                   </label>
                   <input
                     id="email"
@@ -182,15 +140,15 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-caption font-medium text-gray-400 mb-1.5">
-                    Tell Me About Your Project <span className="text-[#517E4F]">*</span>
+                  <label htmlFor="message" className="block text-caption font-medium text-ink-muted mb-2">
+                    Tell me about the problem <span className="text-accent">*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows="4"
                     className="input-field resize-none min-h-[7rem]"
-                    placeholder="What challenge are you trying to solve? What does success look like?"
+                    placeholder="What are you trying to achieve? What stands in the way?"
                     required
                   ></textarea>
                   <ValidationError prefix="Message" field="message" errors={state.errors} />
@@ -199,14 +157,14 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="btn-primary btn-premium w-full text-base sm:text-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {state.submitting ? 'Sending...' : 'Book a Free Consultation'}
-                  {!state.submitting && <span aria-hidden="true">→</span>}
+                  {state.submitting ? 'Sending...' : "Let's talk about your project"}
+                  {!state.submitting && <ArrowRight className="w-4 h-4" />}
                 </button>
 
-                <p className="text-gray-600 text-[11px] text-center leading-relaxed">
-                  Your information is kept private and never shared with third parties.
+                <p className="text-caption text-ink-faint text-center">
+                  Your information is kept private and never shared.
                 </p>
               </form>
             </div>

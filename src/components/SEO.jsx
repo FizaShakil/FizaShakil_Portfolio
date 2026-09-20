@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
-  title = 'Fiza Shakil | Custom Web Development for Growing Businesses',
-  description = 'I help startups and businesses launch products, improve customer experience, and automate workflows through custom web solutions. Book a free consultation.',
+  title = 'Fiza Shakil | Product-Minded Full-Stack Developer',
+  description = 'I build digital products that solve real business problems — web apps, e-commerce platforms, business systems, and AI-powered products, from the problem first.',
   canonical = 'https://fiza-shakil.dev',
   image = 'https://fiza-shakil.dev/preview.png',
   type = 'website',
-  keywords = 'Web Development, Business Websites, Custom Web Applications, SaaS Development, Landing Pages, Business Automation, Website Developer, Digital Products, Startup Development, High-Converting Websites',
+  keywords = 'Product-minded full-stack developer, Full stack developer, React developer, Node.js developer, Product-focused developer, E-commerce development, Business systems, AI-powered products, Custom web applications, Product engineering',
   author = 'Fiza Shakil',
 }) => {
   const siteUrl = 'https://fiza-shakil.dev';
@@ -27,7 +27,7 @@ const SEO = ({
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:url" content={canonical} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Fiza Shakil — Digital Product Consultant" />
+      <meta property="og:site_name" content="Fiza Shakil — Product-Minded Full-Stack Developer" />
       <meta property="og:locale" content="en_US" />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -43,28 +43,29 @@ const SEO = ({
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'ProfessionalService',
-          name: 'Fiza Shakil — Digital Product Development',
+          '@type': 'Person',
+          name: 'Fiza Shakil',
+          jobTitle: 'Product-Minded Full-Stack Developer',
           description,
           url: siteUrl,
           image: fullImageUrl,
-          areaServed: 'Worldwide',
-          serviceType: [
-            'Web Development',
-            'SaaS Development',
-            'Business Automation',
-            'Landing Page Design',
-            'E-commerce Development',
+          knowsAbout: [
+            'Full-Stack Development',
+            'E-Commerce Platforms',
+            'Business Systems',
+            'AI-Powered Products',
+            'React',
+            'Node.js',
+            'Product Engineering',
           ],
           sameAs: [
             'https://linkedin.com/in/fiza-shakil',
             'https://github.com/FizaShakil',
           ],
-          founder: {
-            '@type': 'Person',
-            name: 'Fiza Shakil',
-            jobTitle: 'Digital Product Consultant',
-            url: siteUrl,
+          worksFor: {
+            '@type': 'Organization',
+            name: 'SumItUp',
+            url: 'https://github.com/SumitUp-AI',
           },
         })}
       </script>
