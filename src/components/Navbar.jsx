@@ -2,47 +2,44 @@ import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock';
+import { ArrowRight } from './Reusable-Components/Arrow';
 
 const navLinks = [
-  { label: 'Services', href: '#services', isHash: true, icon: 'fa-solid fa-layer-group' },
-  { label: 'Case Studies', href: '#case-studies', isHash: true, icon: 'fa-solid fa-chart-line' },
-  { label: 'Process', href: '#process', isHash: true, icon: 'fa-solid fa-list-check' },
-  { label: 'Projects', to: '/projects', isHash: false, icon: 'fa-solid fa-folder-open' },
-  { label: 'Contact', href: '#contact', isHash: true, icon: 'fa-solid fa-envelope' },
+  { label: 'Work', href: '#work', isHash: true },
+  { label: 'How I Think', href: '#how-i-think', isHash: true },
+  { label: 'About', href: '#about', isHash: true },
+  { label: 'Contact', href: '#contact', isHash: true },
 ];
 
-const Logo = ({ className = '' }) => (
-  <span className={`font-mono font-bold tracking-tight ${className}`}>
-    <span className="text-[#517E4F]">{'<'}</span>
-    <span className="text-white">F</span>
-    <span className="text-[#517E4F]">{'/>'}</span>
+const Wordmark = ({ className = '' }) => (
+  <span className={`inline-flex items-baseline gap-0.5 font-medium tracking-tight ${className}`}>
+    <span className="text-ink">Fiza Shakil</span>
+    <span className="w-1.5 h-1.5 bg-accent self-center mb-1" aria-hidden="true" />
   </span>
 );
 
-const desktopNavItemClass =
-  'py-2 text-sm font-medium transition-colors duration-200 no-underline';
-
-const getDesktopNavClass = (isActive) =>
-  `${desktopNavItemClass} ${
-    isActive
-      ? 'text-[#6a9a68] hover:text-[#517E4F]'
-      : 'text-gray-200 hover:text-[#517E4F]'
-  } focus-visible:text-[#517E4F]`;
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   useBodyScrollLock(isOpen);
 
   const closeMenu = useCallback(() => setIsOpen(false), []);
 
-  const scrollToSection = (id) => {
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToSection = (href) => {
     closeMenu();
     if (location.pathname !== '/') {
-      window.location.href = `/${id}`;
+      window.location.href = `/${href}`;
       return;
     }
-    const el = document.querySelector(id);
+    const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -60,25 +57,44 @@ const Navbar = () => {
     closeMenu();
   }, [location.pathname, closeMenu]);
 
-  const mobileLinkClass =
-    'flex items-center gap-4 w-full py-4 px-4 rounded-xl text-gray-100 hover:bg-white/[0.07] hover:text-white active:bg-white/[0.1] transition-colors text-base font-medium';
+  const desktopItem = (link) =>
+    link.isHash ? (
+      <button
+        key={link.label}
+        type="button"
+        onClick={() => scrollToSection(link.href)}
+        className="relative py-1 text-body text-ink-muted hover:text-ink transition-colors duration-200 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+      >
+        {link.label}
+      </button>
+    ) : (
+      <NavLink
+        key={link.label}
+        to={link.to}
+        className={({ isActive }) =>
+          `relative py-1 text-body transition-colors duration-200 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${
+            isActive ? 'text-ink after:w-full' : 'text-ink-muted hover:text-ink'
+          }`
+        }
+      >
+        {link.label}
+      </NavLink>
+    );
 
   const mobileMenu = (
     <>
-      {/* Backdrop */}
       {isOpen && (
         <button
           type="button"
-          className="fixed inset-0 bg-black/75 backdrop-blur-sm z-[200] md:hidden"
+          className="fixed inset-0 bg-black/70 z-[200] md:hidden"
           onClick={closeMenu}
           aria-label="Close menu overlay"
         />
       )}
 
-      {/* Full-height sidebar — portaled to body so fixed + h-dvh work correctly */}
       <div
         id="mobile-menu"
-        className={`fixed top-0 left-0 bottom-0 h-dvh w-[min(20rem,90vw)] bg-[#0a0a0a] border-r border-gray-800/80 shadow-2xl z-[210] flex flex-col transform transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed top-0 left-0 bottom-0 h-dvh w-[min(20rem,90vw)] bg-base border-r border-line z-[210] flex flex-col transform transition-transform duration-300 ease-out md:hidden ${
           isOpen ? 'translate-x-0' : '-translate-x-full pointer-events-none'
         }`}
         role="dialog"
@@ -86,74 +102,59 @@ const Navbar = () => {
         aria-label="Mobile navigation"
         aria-hidden={!isOpen}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-gray-800 bg-[#04090d] shrink-0">
+        <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-line shrink-0">
           <NavLink to="/" onClick={closeMenu} className="py-1" aria-label="Home">
-            <Logo className="text-xl" />
+            <Wordmark className="text-xl" />
           </NavLink>
           <button
             type="button"
             onClick={closeMenu}
-            className="flex items-center justify-center min-h-[2.75rem] min-w-[2.75rem] rounded-xl border border-gray-700 bg-[#151515] text-gray-300 hover:text-white hover:border-gray-600 transition-colors"
+            className="flex items-center justify-center min-h-[2.75rem] min-w-[2.75rem] border border-line text-ink-muted hover:text-ink transition-colors"
             aria-label="Close menu"
           >
-            <i className="fas fa-xmark text-lg" aria-hidden="true"></i>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="square" />
+            </svg>
           </button>
         </div>
 
-        {/* Nav links — fills remaining height */}
-        <nav className="flex-1 overflow-y-auto overscroll-contain px-3 py-5" aria-label="Mobile menu links">
-          <p className="px-4 pb-3 text-[11px] font-semibold uppercase tracking-widest text-gray-500">
-            Menu
-          </p>
-          <ul className="space-y-1.5">
-            <li>
-              <NavLink to="/" onClick={closeMenu} className={mobileLinkClass}>
-                <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#517E4F]/20 border border-[#517E4F]/25 shrink-0">
-                  <i className="fa-solid fa-house text-[#517E4F] text-lg" aria-hidden="true"></i>
-                </span>
-                Home
-              </NavLink>
-            </li>
-            {navLinks.map((link) =>
-              link.isHash ? (
-                <li key={link.label}>
-                  <button
-                    type="button"
-                    onClick={() => scrollToSection(link.href)}
-                    className={`${mobileLinkClass} bg-transparent border-none cursor-pointer text-left`}
-                  >
-                    <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#517E4F]/20 border border-[#517E4F]/25 shrink-0">
-                      <i className={`${link.icon} text-[#517E4F] text-lg`} aria-hidden="true"></i>
-                    </span>
-                    {link.label}
-                  </button>
-                </li>
-              ) : (
-                <li key={link.label}>
-                  <NavLink
-                    to={link.to}
-                    onClick={closeMenu}
-                    className={({ isActive }) =>
-                      `${mobileLinkClass}${isActive ? ' text-[#6a9a68]' : ''}`
+        <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-6" aria-label="Mobile menu links">
+          <ul className="space-y-1">
+            {[{ label: 'Home', href: null }, ...navLinks].map((link, i) => (
+              <li key={link.label}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!link.href) {
+                      closeMenu();
+                      if (location.pathname !== '/') window.location.href = '/';
+                      else window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                      scrollToSection(link.href);
                     }
-                  >
-                    <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#517E4F]/20 border border-[#517E4F]/25 shrink-0">
-                      <i className={`${link.icon} text-[#517E4F] text-lg`} aria-hidden="true"></i>
-                    </span>
-                    {link.label}
-                  </NavLink>
-                </li>
-              )
-            )}
+                  }}
+                  className="group flex items-center justify-between w-full px-2 py-4 text-left text-ink border-b border-line transition-colors hover:text-accent-soft"
+                >
+                  <span className="flex items-baseline gap-3">
+                    <span className="font-mono text-kicker text-ink-faint">0{i + 1}</span>
+                    <span className="text-body font-medium">{link.label}</span>
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        {/* Footer tagline only — no CTA button */}
-        <div className="shrink-0 px-5 py-4 border-t border-gray-800 bg-[#04090d] pb-[calc(1rem+env(safe-area-inset-bottom,0px))]">
-          <p className="text-gray-500 text-xs text-center leading-relaxed">
-            Digital products that grow your business
-          </p>
+        <div className="shrink-0 px-5 py-5 border-t border-line pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))]">
+          <a
+            href="#contact"
+            onClick={closeMenu}
+            className="btn-primary w-full"
+          >
+            Start a Project
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </>
@@ -161,74 +162,53 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-[100] bg-[#04090d]/97 backdrop-blur-md border-b border-gray-800/60 shadow-lg shadow-black/20">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6" aria-label="Main navigation">
-          <div className="flex items-center justify-between gap-3 min-h-[3.5rem]">
+      <header
+        className={`fixed top-0 inset-x-0 z-[100] transition-all duration-300 ${
+          scrolled
+            ? 'bg-base/90 backdrop-blur-md border-b border-line py-0'
+            : 'bg-transparent border-b border-transparent py-1'
+        }`}
+      >
+        <nav className="max-w-section mx-auto px-5 sm:px-8 lg:px-12" aria-label="Main navigation">
+          <div className={`flex items-center justify-between gap-4 transition-all duration-300 ${scrolled ? 'min-h-[3.25rem]' : 'min-h-[4rem]'}`}>
             <NavLink
               to="/"
-              className="flex items-center shrink-0 py-2 pr-2 rounded-lg hover:opacity-90 transition-opacity focus-visible:ring-2 focus-visible:ring-[#517E4F] focus-visible:ring-offset-2 focus-visible:ring-offset-[#04090d]"
+              className="flex items-center shrink-0 rounded-sm hover:opacity-80 transition-opacity"
               aria-label="Fiza Shakil — Home"
               onClick={closeMenu}
             >
-              <Logo className="text-xl sm:text-2xl" />
+              <Wordmark className="text-lg sm:text-xl" />
             </NavLink>
 
-            <div className="hidden md:flex items-center gap-5 lg:gap-6 ml-auto">
-              {navLinks.slice(0, -1).map((link) =>
-                link.isHash ? (
-                  <button
-                    key={link.label}
-                    type="button"
-                    onClick={() => scrollToSection(link.href)}
-                    className={`${getDesktopNavClass(false)} bg-transparent border-none cursor-pointer`}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <NavLink
-                    key={link.label}
-                    to={link.to}
-                    className={({ isActive }) => getDesktopNavClass(isActive)}
-                  >
-                    {link.label}
-                  </NavLink>
-                )
-              )}
-              <a
-                href="#contact"
-                className="bg-[#517E4F] hover:bg-[#6a9a68] text-white rounded-lg px-4 lg:px-5 py-2.5 font-semibold transition-colors duration-200 btn-premium whitespace-nowrap text-sm"
-              >
-                Book a Consultation
+            <div className="hidden md:flex items-center gap-7 lg:gap-9 ml-auto">
+              {navLinks.map(desktopItem)}
+              <a href="#contact" className="btn-secondary text-sm px-5 min-h-[2.5rem]">
+                Start a Project
               </a>
             </div>
 
-            <div className="flex items-center gap-2.5 md:hidden ml-auto shrink-0">
-              <a
-                href="#contact"
-                className="flex items-center justify-center min-h-[2.75rem] min-w-[2.75rem] rounded-xl border border-[#517E4F]/50 bg-[#517E4F]/15 text-[#517E4F] hover:bg-[#517E4F]/25 transition-colors"
-                aria-label="Book a free consultation"
-              >
-                <i className="fa-solid fa-calendar-check text-lg" aria-hidden="true"></i>
-              </a>
+            <div className="flex items-center md:hidden shrink-0">
               <button
                 type="button"
-                className="flex items-center justify-center min-h-[2.75rem] min-w-[2.75rem] rounded-xl border border-gray-700 bg-[#151515] text-gray-200 hover:border-[#517E4F]/50 hover:text-white transition-colors"
+                className="flex items-center justify-center min-h-[2.75rem] min-w-[2.75rem] border border-line text-ink transition-colors"
                 onClick={() => setIsOpen((prev) => !prev)}
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <i
-                  className={`fas ${isOpen ? 'fa-xmark' : 'fa-bars'} text-lg`}
-                  aria-hidden="true"
-                ></i>
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                  {isOpen ? (
+                    <path d="M6 6l12 12M18 6L6 18" strokeLinecap="square" />
+                  ) : (
+                    <path d="M4 7h16M4 12h16M4 17h10" strokeLinecap="square" />
+                  )}
+                </svg>
               </button>
             </div>
           </div>
         </nav>
       </header>
 
-      {/* Spacer — keeps page content below the fixed navbar */}
       <div className="h-nav shrink-0" aria-hidden="true" />
 
       {createPortal(mobileMenu, document.body)}
