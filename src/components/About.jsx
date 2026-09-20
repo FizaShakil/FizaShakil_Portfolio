@@ -1,61 +1,91 @@
-import Heading from './Reusable-Components/Heading';
-import SectionCTA from './Reusable-Components/SectionCTA';
+import SectionHeading from './Reusable-Components/SectionHeading';
+import { ArrowRight } from './Reusable-Components/Arrow';
 import myImage from '../assets/myImage.jpg';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const About = () => {
-  const [sectionRef, sectionVisible] = useScrollReveal();
+  const [imgRef, imgVisible] = useScrollReveal();
+  const [textRef, textVisible] = useScrollReveal();
 
   return (
-    <section id="about" className="section-padding" aria-labelledby="about-heading">
-      <div className="section-container">
-        <Heading heading="Your Business Partner, Not Just a Developer" />
-        <div
-          ref={sectionRef}
-          className={`flex flex-col md:flex-row items-center gap-8 md:gap-10 reveal-fade-up ${sectionVisible ? 'visible' : ''}`}
-        >
-          <div className="w-48 sm:w-56 md:w-72 shrink-0">
-            <img
-              src={myImage}
-              alt="Fiza Shakil — digital product consultant helping businesses grow"
-              className="w-full aspect-square object-cover rounded-2xl shadow-2xl border border-gray-800"
-              loading="lazy"
-              width={320}
-              height={320}
-            />
-          </div>
-          <div className="flex-1 space-y-4 text-gray-300 text-body max-w-prose md:max-w-none">
-            <p>
-              I'm <strong className="text-white font-medium">Fiza Shakil</strong> — I help startups and businesses
-              turn ideas into fast, scalable digital products that attract customers, automate operations,
-              and grow revenue.
-            </p>
-            <p>
-              Whether you're launching your first product, replacing a slow outdated website, or building
-              an internal system to save your team hours every week — I focus on understanding your business
-              goals first, then building solutions that deliver measurable results.
-            </p>
-            <p className="hidden sm:block">
-              My clients include SaaS founders, restaurant owners, creative professionals, and growing
-              businesses who needed a partner they could trust — someone who communicates clearly, meets
-              deadlines, and actually delivers on promises.
-            </p>
-
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-2">
-              {[
-                { label: 'Projects Delivered', value: '5+' },
-                { label: 'Years Experience', value: '1+' },
-                { label: 'Remote Worldwide', value: 'PKT' },
-              ].map((stat) => (
-                <div key={stat.label} className="card-base p-3 sm:p-4 text-center">
-                  <p className="text-[#517E4F] font-bold text-lg sm:text-xl">{stat.value}</p>
-                  <p className="text-gray-500 text-[10px] sm:text-xs mt-0.5 leading-tight">{stat.label}</p>
+    <section className="section section-bg-b border-t border-line py-16 lg:py-20 scroll-mt-nav" id="about">
+      <div className="section-inner">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Portrait */}
+          <div className="lg:col-span-5">
+            <div
+              ref={imgRef}
+              className={`reveal-left ${imgVisible ? 'visible' : ''}`}
+            >
+              <div className="relative aspect-[4/5] overflow-hidden border border-line">
+                <img
+                  src={myImage}
+                  alt="Fiza Shakil — product-minded full-stack developer"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={700}
+                  height={875}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-base/40 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
+                  <span className="text-body text-white font-medium">Fiza Shakil</span>
+                  <span className="w-5 h-5 bg-accent" aria-hidden="true" />
                 </div>
-              ))}
+              </div>
+              <div className="flex items-center justify-between py-4 text-caption text-ink-faint">
+                <span>Full-Stack Developer</span>
+                <span className="font-mono">based · remote worldwide</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Narrative */}
+          <div className="lg:col-span-6">
+            <div ref={textRef} className={`reveal-fade-up flex flex-col gap-6 ${textVisible ? 'visible' : ''}`}>
+              <SectionHeading
+                kicker="About"
+                heading={
+                  <>
+                    A developer who thinks like a{' '}
+                    <span className="serif-accent">product person</span>
+                  </>
+                }
+              />
+
+              <div className="flex flex-col gap-5 text-body text-ink-muted leading-relaxed">
+                <p className="drop-cap">
+                  I'm Fiza Shakil — I build software the way a product team would:
+                  understand what the business needs first, design the workflow
+                  second, and write code last. That ordering is the whole job.
+                </p>
+                <p>
+                  I work across the full stack — React and TypeScript on the
+                  frontend, Node.js and Express on the backend, and MongoDB,
+                  PostgreSQL, or MySQL for data. End to end, I own a feature
+                  from idea to running product.
+                </p>
+                <p>
+                  The work I enjoy most has real depth: commerce with business
+                  rules, operations systems with role-based workflows, or
+                  AI-powered products that have to feel reliable in daily use.
+                </p>
+              </div>
+
+              <div className="border border-line p-6 mt-2 flex flex-col gap-4">
+                <p className="text-kicker text-ink-faint">The standard I hold</p>
+                <p className="text-body text-ink leading-relaxed">
+                  I've worked inside a production engineering team at 10Pearls —
+                  code reviews, structured sprints, shipping features alongside
+                  senior developers. That's the bar I bring to independent work.
+                </p>
+              </div>
+
+              <a href="#work" className="arrow-link self-start text-body text-accent-soft hover:text-white transition-colors">
+                See what that standard looks like <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
-        <SectionCTA text="Let's Build Something Together" />
       </div>
     </section>
   );
