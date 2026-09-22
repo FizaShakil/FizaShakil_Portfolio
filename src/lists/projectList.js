@@ -8,34 +8,34 @@ import apiImg from '../assets/api-01_generated.jpg';
 const projects = [
   {
     id: 2,
-    title: "Fashionista — E-Commerce with Admin CMS",
+    title: "Fashionista — B2B + B2C Commerce Platform",
     featured: true,
-    tag: "B2C E-Commerce Platform",
+    tag: "B2B + B2C E-Commerce",
     context:
-      "A full online store where customers browse and purchase products, and store owners manage catalog, orders, and inventory from an admin panel.",
+      "One platform serving two completely different buyers — retail customers shopping for themselves, and wholesale businesses purchasing in bulk. Same catalog, different rules.",
     problem:
-      "Selling through social media made order tracking messy. There was no proper storefront, no checkout flow, and no single place to manage products and orders.",
+      "Fashion sellers rely on social media DMs for orders. No structured catalog, no checkout, no wholesale pricing, no admin control. Retail and wholesale buyers clash in the same messy workflow.",
     problemShort:
-      "Selling through social media made order tracking messy — no real storefront, checkout, or admin control.",
+      "Social-media selling with no wholesale support — retail and business buyers colliding in one messy workflow.",
     solution:
-      "Built a full-stack store — React storefront with cart and multi-step checkout, Node.js/Express API, MongoDB database, and an admin CMS for products, orders, and inventory.",
+      "Built a full-stack commerce platform with context-aware pricing: retail customers see retail prices, approved wholesale buyers see wholesale pricing and MOQ — all through one storefront, one API, and one admin dashboard.",
     solutionShort:
-      "Built a full-stack store: React storefront with cart and checkout, Node/Express API, MongoDB, and an admin CMS.",
+      "Context-aware commerce: retail + wholesale pricing, approval-gated wholesale, server-authoritative checkout — one platform, two buyer types.",
     value:
-      "Customers get a real shopping experience. Store owners manage catalog and orders from one dashboard instead of scattered social-media messages.",
+      "One platform handles both retail and wholesale without separate systems. Store owners manage catalog, orders, and wholesale requests from a single dashboard.",
     valueShort:
-      "Customers get a real shopping experience; store owners manage catalog and orders from one dashboard.",
+      "One platform, two buyer types — retail and wholesale managed from a single dashboard.",
     userOutcome:
-      "Customers complete purchases in a straightforward flow. Store owners manage everything from one admin interface instead of scattered messages.",
+      "Retail customers shop normally. Wholesale buyers get approved, see bulk pricing, and order with MOQ — all through the same storefront.",
     businessValue:
-      "Replaces informal selling with a structured store that supports growth — inventory tracking, order history, and a professional shopping experience.",
+      "Eliminates the need for separate retail and wholesale systems. One catalog, one admin, context-aware pricing that resolves correctly for every buyer type.",
     description:
-      "Full-stack e-commerce platform with customer auth, cart, checkout, and an admin CMS — not just a product catalog.",
+      "B2B + B2C fashion e-commerce with context-aware pricing, wholesale approval workflows, server-authoritative checkout, and a full admin operations platform.",
     localImage: fashionistaImg,
     githubLink: "#",
     demoLink: "https://fashionista-client.onrender.com/",
-    industry: "E-Commerce",
-    proofPoints: ["Full-Stack Build", "Auth + Cart + Checkout", "Admin CMS"],
+    industry: "B2B + B2C E-Commerce",
+    proofPoints: ["B2B + B2C Pricing", "Wholesale Approval Flow", "Server-Authoritative Checkout"],
     techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   },
   {
@@ -107,35 +107,35 @@ const projects = [
   },
   {
     id: 6,
-    title: "Glance — Travel Booking Frontend",
-    featured: false,
-    supporting: true,
+    title: "Glance — Travel Booking UX",
+    featured: true,
+    index: "04",
     tag: "Product Frontend",
     context:
-      "A travel booking platform frontend focused on destination discovery and a smooth booking experience across devices.",
+      "A travel booking platform where browsing destinations becomes booking stays — mood-based discovery, comparison-ready hotel cards, and transparent pricing.",
     problem:
-      "Travel sites often feel cluttered on mobile and slow to navigate — users leave before completing a booking.",
+      "Travel websites show beautiful destinations but give no guidance on choosing. Users are overwhelmed by options and leave before booking.",
     problemShort:
-      "Travel sites feel cluttered on mobile and slow to navigate — users leave before booking.",
+      "Travel sites overwhelm users with options instead of helping them decide — no decision path, no booking confidence.",
     solution:
-      "Designed and built a polished React frontend — destination showcases, filtering, mobile-first responsive layout, and booking flow UI.",
+      "Designed a traveler-first booking experience: mood-based filtering, curated stays, destination context pages, and a transparent booking widget with date-based pricing.",
     solutionShort:
-      "Built a polished React frontend — destination showcases, filtering, mobile-first layout, and booking flow.",
+      "Traveler-first UX: mood-based discovery, curated hotels, destination context, and transparent booking flow.",
     value:
-      "A visually clear browsing and booking experience that works consistently across screen sizes.",
+      "A travel frontend where every screen serves a decision — discover destinations, compare stays, understand quality, book with confidence.",
     valueShort:
-      "A visually clear browsing and booking experience that works across all screen sizes.",
+      "Every screen serves a decision — discover, compare, understand, book.",
     userOutcome:
-      "A visually clear browsing and booking experience that works consistently across screen sizes.",
+      "Travelers narrow by mood, compare hotel cards with ratings and prices, read destination context, and book through a transparent flow with no hidden fees.",
     businessValue:
-      "Shows ability to build polished, user-facing product interfaces where visual hierarchy and mobile experience matter.",
+      "Demonstrates product UX thinking: information architecture that guides decisions, mobile-first design, and frontend architecture built for maintainability.",
     description:
-      "Travel booking frontend with destination discovery, mobile-first design, and intuitive booking flow.",
+      "Travel booking UX with mood-based discovery, curated hotel comparison, destination context pages, and a transparent booking widget.",
     localImage: glanceImg,
     demoLink: "https://glance-one.vercel.app/",
-    industry: "Travel",
-    proofPoints: ["Mobile-First UI", "Booking Flow", "Visual Design"],
-    techStack: ["React", "Tailwind CSS"],
+    industry: "Travel & Hospitality",
+    proofPoints: ["UX Design", "Mobile-First UI", "Booking Flow", "Product Frontend"],
+    techStack: ["React", "Vite", "Tailwind CSS", "React Router", "Framer Motion"],
   },
   {
     id: 5,
