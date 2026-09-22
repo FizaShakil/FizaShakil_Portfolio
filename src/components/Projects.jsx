@@ -31,7 +31,7 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-14 lg:gap-20 mb-14 sm:mb-20">
+          <div className="flex flex-col gap-10 lg:gap-14 mb-14 sm:mb-20">
             {flagship.map((project, index) => (
               <ProjectCard key={project.id} project={project} no={String(index + 1).padStart(2, '0')} isReversed={index % 2 === 1} />
             ))}
@@ -68,35 +68,34 @@ const ProjectCard = ({ project, no, isReversed }) => {
       ref={cardRef}
       className={`grid lg:grid-cols-12 gap-8 lg:gap-12 items-start reveal-fade-up ${cardVisible ? 'visible' : ''}`}
     >
-      <div className={`lg:col-span-7 lg:col-start-1 ${isReversed ? 'lg:order-2' : ''}`}>
+      <div className={`lg:col-span-7 ${isReversed ? 'lg:col-start-6 lg:col-span-7 lg:row-start-1' : ''}`}>
         <Link to={`/case-study/${project.id}`} className="group block" aria-label={`Explore case study: ${project.title}`}>
-          <div className="img-zoom relative overflow-hidden border border-line aspect-[16/10]">
+          <div className="img-zoom relative overflow-hidden border border-line bg-base-2 aspect-[3/2]">
             <img
               src={project.localImage || project.image}
               alt={`${project.title} — project screenshot`}
               className="w-full h-full object-cover"
               loading="lazy"
               width={900}
-              height={560}
+              height={600}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-base/40 to-transparent pointer-events-none" />
           </div>
         </Link>
       </div>
 
-      <div className={`lg:col-span-5 flex flex-col gap-5 py-2 ${isReversed ? 'lg:order-1' : ''}`}>
+      <div className={`flex flex-col gap-4 py-2 ${isReversed ? 'lg:col-span-5 lg:col-start-1 lg:row-start-1' : 'lg:col-span-5'}`}>
         <div className="flex items-center gap-4">
           <span className="font-mono text-kicker text-accent">{no}</span>
           <p className="text-kicker text-ink-faint">{project.tag || project.industry}</p>
         </div>
 
-        <h2 className="text-subheading md:text-heading font-medium text-ink text-balance">
+        <h2 className="text-subheading font-medium text-ink text-balance">
           <Link to={`/case-study/${project.id}`} className="hover:text-accent-soft transition-colors">
             {project.title}
           </Link>
         </h2>
 
-        <dl className="hairline-t pt-5 flex flex-col gap-4">
+        <dl className="hairline-t pt-4 flex flex-col gap-3">
           {project.problemShort && (
             <div>
               <dt className="kicker text-ink-faint mb-1">The problem</dt>
@@ -127,7 +126,7 @@ const ProjectCard = ({ project, no, isReversed }) => {
           </div>
         )}
 
-        <div className="flex flex-wrap items-center gap-6 pt-1">
+        <div className="flex flex-wrap items-center gap-4 pt-1">
           <Link
             to={`/case-study/${project.id}`}
             className="btn-primary"

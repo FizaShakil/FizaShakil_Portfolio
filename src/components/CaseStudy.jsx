@@ -109,7 +109,7 @@ const CaseStudy = () => {
       <div className="section-bg-a">
         {/* Header */}
         <section className="border-b border-line">
-          <div className="section-inner pt-10 pb-8 sm:pt-14 sm:pb-12">
+          <div className="section-inner pt-6 pb-6 sm:pt-10 sm:pb-8">
             <Link
               to="/projects"
               className="inline-flex items-center gap-2 text-kicker text-ink-faint hover:text-ink transition-colors"
@@ -122,7 +122,7 @@ const CaseStudy = () => {
 
         {/* Hero */}
         <section className="border-b border-line">
-          <div className="section-inner py-12 lg:py-20">
+          <div className="section-inner py-12 lg:pb-20">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
               <div className="lg:col-span-7 flex flex-col gap-6">
                 {caseStudy.tag && <p className="kicker-rule">{caseStudy.tag}</p>}

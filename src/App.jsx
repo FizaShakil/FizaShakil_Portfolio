@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Routes, useLocation, Link} from 'react-r
 import Home from './components/Home'
 import Projects from './components/Projects'
 import CaseStudy from './components/CaseStudy'
+import FashionistaCaseStudy from './components/FashionistaCaseStudy'
+import GlanceCaseStudy from './components/GlanceCaseStudy'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -27,6 +29,8 @@ function AppContent() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/projects' element={<Projects/>} />
+        <Route path='/case-study/2' element={<FashionistaCaseStudy/>} />
+        <Route path='/case-study/6' element={<GlanceCaseStudy/>} />
         <Route path='/case-study/:id' element={<CaseStudy/>} />
         <Route path='*' element={<NotFound/>} />
       </Routes>
