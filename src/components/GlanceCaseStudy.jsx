@@ -59,20 +59,16 @@ const Reveal = ({ children, className = '' }) => {
    ================================================================ */
 const ImageSlider = ({ slides: inputSlides }) => {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0);
 
   const goTo = useCallback((idx) => {
-    setDirection(idx > current ? 1 : -1);
     setCurrent(idx);
-  }, [current]);
+  }, []);
 
   const next = useCallback(() => {
-    setDirection(1);
     setCurrent((prev) => (prev + 1) % inputSlides.length);
   }, [inputSlides.length]);
 
   const prev = useCallback(() => {
-    setDirection(-1);
     setCurrent((prev) => (prev - 1 + inputSlides.length) % inputSlides.length);
   }, [inputSlides.length]);
 

@@ -86,7 +86,7 @@ const ProjectsHome = () => {
                 <span className="serif-accent">problem</span>
               </>
             }
-            intro="Three flagship builds, presented as case studies — plus a polished product frontend."
+            intro="Five flagship builds, presented as case studies."
           />
           <Link
             to="/projects"
