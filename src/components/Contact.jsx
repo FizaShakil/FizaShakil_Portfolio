@@ -1,7 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowRight } from './Reusable-Components/Arrow';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa6';
+import { FaLinkedinIn, FaGithub, FaFacebookF } from 'react-icons/fa6';
 
 const whatHappensNext = [
   { step: '1', text: "I'll review your message and respond within 24 hours." },
@@ -90,6 +90,9 @@ const Contact = () => {
                   </a>
                   <a href="https://github.com/FizaShakil" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex items-center justify-center w-10 h-10 border border-line text-ink-muted hover:text-accent-soft hover:border-accent transition-colors">
                     <FaGithub className="w-4 h-4" />
+                  </a>
+                  <a href="https://www.facebook.com/FIZA.SHAKIL25" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-10 h-10 border border-line text-ink-muted hover:text-accent-soft hover:border-accent transition-colors">
+                    <FaFacebookF className="w-4 h-4" />
                   </a>
                 </div>
               </div>

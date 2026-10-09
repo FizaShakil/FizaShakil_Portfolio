@@ -1,4 +1,4 @@
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa6';
+import { FaLinkedinIn, FaGithub, FaFacebookF } from 'react-icons/fa6';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -28,6 +28,15 @@ const Footer = () => {
             className="flex items-center justify-center w-9 h-9 border border-line text-ink-muted hover:text-accent-soft hover:border-accent transition-colors"
           >
             <FaGithub className="w-3.5 h-3.5" />
+          </a>
+          <a
+            href="https://www.facebook.com/FIZA.SHAKIL25"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="flex items-center justify-center w-9 h-9 border border-line text-ink-muted hover:text-accent-soft hover:border-accent transition-colors"
+          >
+            <FaFacebookF className="w-3.5 h-3.5" />
           </a>
           <a href="#contact" className="hover:text-accent-soft transition-colors px-2">
             Contact
