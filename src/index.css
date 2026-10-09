@@ -169,6 +169,27 @@
       placeholder:text-ink-faint;
   }
 
+  /* ---------- Filter chips ---------- */
+  .filter-chip {
+    @apply inline-flex items-center justify-center gap-2 min-h-[2.25rem] px-3.5
+      text-kicker select-none transition-colors duration-200;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #a6b1ba;
+  }
+
+  .filter-chip:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    color: #f2f4f6;
+  }
+
+  /* Active state is driven by the aria-pressed attribute, so visuals and
+     assistive tech can never disagree. */
+  .filter-chip[aria-pressed='true'] {
+    border-color: #507e4f;
+    color: #8fb58d;
+    background-color: rgba(80, 126, 79, 0.14);
+  }
+
   /* ---------- Cards (use sparingly — open layout preferred) ---------- */
   .surface-card {
     @apply bg-surface border border-line;
