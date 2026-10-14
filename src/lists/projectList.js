@@ -175,6 +175,28 @@ const projects = [
     proofPoints: ["React Three Fiber", "GSAP Motion", "UI/UX Design"],
     techStack: ["React", "TypeScript", "Three.js", "GSAP", "Tailwind CSS"],
   },
+    {
+    id: 7,
+    title: "DevConnect — Developer Marketplace MVP",
+    featured: false,
+    context:
+      "A marketplace MVP connecting businesses with developers — project posting, bidding, profiles, and agreements.",
+    problem:
+      "Businesses and freelancers lack a structured place to match projects with clear terms and transparent workflows.",
+    myContribution:
+      "Built the backend API — Node.js/Express server, MongoDB models, project posting, bid management, and user profile endpoints.",
+    userOutcome:
+      "A structured starting point for project discovery instead of unstructured outreach.",
+    description:
+      "Marketplace MVP backend with project posting, bidding system, and developer profiles.",
+    localImage: apiImg,
+    githubLink: "https://github.com/FizaShakil/DevConnect-lite.git",
+    demoLink: "#",
+    industry: "Marketplace",
+    categories: ["Marketplace"],
+    proofPoints: ["API Design", "MongoDB Models", "Marketplace MVP"],
+    techStack: ["Node.js", "Express", "MongoDB"],
+  },
   {
     id: 5,
     title: "Crystal — Digital Document Management",
@@ -197,28 +219,7 @@ const projects = [
     proofPoints: ["Search UI", "Responsive Design", "Product Frontend"],
     techStack: ["React", "Tailwind CSS"],
   },
-  {
-    id: 7,
-    title: "DevConnect — Developer Marketplace MVP",
-    featured: false,
-    context:
-      "A marketplace MVP connecting businesses with developers — project posting, bidding, profiles, and agreements.",
-    problem:
-      "Businesses and freelancers lack a structured place to match projects with clear terms and transparent workflows.",
-    myContribution:
-      "Built the backend API — Node.js/Express server, MongoDB models, project posting, bid management, and user profile endpoints.",
-    userOutcome:
-      "A structured starting point for project discovery instead of unstructured outreach.",
-    description:
-      "Marketplace MVP backend with project posting, bidding system, and developer profiles.",
-    localImage: apiImg,
-    githubLink: "https://github.com/FizaShakil/DevConnect-lite.git",
-    demoLink: "#",
-    industry: "Marketplace",
-    categories: ["Marketplace"],
-    proofPoints: ["API Design", "MongoDB Models", "Marketplace MVP"],
-    techStack: ["Node.js", "Express", "MongoDB"],
-  },
+
 ];
 
 export default projects;
